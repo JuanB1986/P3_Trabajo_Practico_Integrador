@@ -1,0 +1,6 @@
+@TPI_Viajes_Compartidos_HostAddress = http://localhost:5133
+
+GET {{TPI_Viajes_Compartidos_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
