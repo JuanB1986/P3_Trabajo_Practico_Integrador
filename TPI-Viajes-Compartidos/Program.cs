@@ -13,8 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<UserService>();
+// BORRAR
+//builder.Services.AddScoped<UserService>();
 //builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddTransient<PassengerRepository>();
 
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlite(builder.Configuration["ConnectionStrings:DBConnectionString"], b => b.MigrationsAssembly("Infraestructure")));
 

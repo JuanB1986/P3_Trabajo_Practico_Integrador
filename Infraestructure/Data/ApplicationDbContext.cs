@@ -10,7 +10,6 @@ namespace Infraestructure.Data
 {
     public class ApplicationDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<Passenger> Passengers { get; set; }
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Car> Cars { get; set; }

@@ -53,6 +53,76 @@ namespace Infraestructure.Migrations
                     b.ToTable("Cars");
                 });
 
+            modelBuilder.Entity("Domain.Entities.Driver", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Dni")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Drivers");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Passenger", b =>
+                {
+                    b.Property<int>("UserId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Dni")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("UserId");
+
+                    b.ToTable("Passengers");
+                });
+
             modelBuilder.Entity("Domain.Entities.Travel", b =>
                 {
                     b.Property<int>("TavelId")
@@ -83,50 +153,6 @@ namespace Infraestructure.Migrations
                     b.ToTable("Travels");
                 });
 
-            modelBuilder.Entity("Domain.Entities.User", b =>
-                {
-                    b.Property<int>("UserId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<string>("Discriminator")
-                        .IsRequired()
-                        .HasMaxLength(13)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Dni")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Email")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Password")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("UserId");
-
-                    b.ToTable("Users");
-
-                    b.HasDiscriminator().HasValue("User");
-
-                    b.UseTphMappingStrategy();
-                });
-
             modelBuilder.Entity("PassengerTravel", b =>
                 {
                     b.Property<int>("PassengersUserId")
@@ -140,20 +166,6 @@ namespace Infraestructure.Migrations
                     b.HasIndex("ReservationsTavelId");
 
                     b.ToTable("PassengerTravel");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Driver", b =>
-                {
-                    b.HasBaseType("Domain.Entities.User");
-
-                    b.HasDiscriminator().HasValue("Driver");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Passenger", b =>
-                {
-                    b.HasBaseType("Domain.Entities.User");
-
-                    b.HasDiscriminator().HasValue("Passenger");
                 });
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
