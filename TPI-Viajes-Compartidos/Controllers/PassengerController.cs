@@ -28,9 +28,22 @@ namespace TPI_Viajes_Compartidos.Controllers
                 Dni = requestdto.Dni,
                 Email = requestdto.Email,
                 Password = requestdto.Password,
-    };
+            };
 
             return Ok(_passengerRepository.Add(passenger));
         }
+
+        [HttpGet]
+        public IActionResult GetPassengers()
+        {
+            var passanger = _passengerRepository.GetAll();
+            return Ok(passanger);
+
+        }
+
+
+
+
+
     }
 }

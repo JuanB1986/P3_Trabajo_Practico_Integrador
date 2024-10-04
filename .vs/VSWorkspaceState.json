@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Domain",
+    "\\Domain\\Interfaces",
+    "\\Infraestructure",
+    "\\Infraestructure\\bin",
+    "\\Infraestructure\\bin\\Debug",
+    "\\Infraestructure\\Data",
+    "\\Infraestructure\\Migrations",
+    "\\Infraestructure\\Repositories",
+    "\\TPI-Viajes-Compartidos"
+  ],
+  "SelectedNode": "\\TPI-Viajes-Compartidos",
+  "PreviewInSolutionExplorer": false
+}

@@ -1,12 +1,71 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Administrador\\Desktop\\TPI\\P3_Trabajo_Practico_Integrador\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\tpi-viajes-compartidos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\tpi-viajes-compartidos\\controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\infraestructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Program.cs",
+              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Program.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Program.cs",
+              "RelativeToolTip": "TPI-Viajes-Compartidos\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T01:35:26.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PassengerController.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
+              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
+              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAAAUwCcAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T00:33:33.421Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PassengerRepository.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Infraestructure\\Repositories\\PassengerRepository.cs",
+              "RelativeDocumentMoniker": "Infraestructure\\Repositories\\PassengerRepository.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Infraestructure\\Repositories\\PassengerRepository.cs",
+              "RelativeToolTip": "Infraestructure\\Repositories\\PassengerRepository.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAwBgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T00:27:25.367Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

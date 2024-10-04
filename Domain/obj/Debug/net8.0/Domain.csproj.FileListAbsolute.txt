@@ -21,3 +21,15 @@ C:\Users\Administrador\Desktop\TPI\P3_Trabajo_Practico_Integrador\Domain\obj\Deb
 C:\Users\Administrador\Desktop\TPI\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\refint\Domain.dll
 C:\Users\Administrador\Desktop\TPI\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.pdb
 C:\Users\Administrador\Desktop\TPI\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\ref\Domain.dll
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\bin\Debug\net8.0\Domain.deps.json
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\bin\Debug\net8.0\Domain.dll
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\bin\Debug\net8.0\Domain.pdb
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.AssemblyInfoInputs.cache
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.AssemblyInfo.cs
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.csproj.CoreCompileInputs.cache
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.sourcelink.json
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.dll
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\refint\Domain.dll
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\Domain.pdb
+C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\obj\Debug\net8.0\ref\Domain.dll

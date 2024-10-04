@@ -22,5 +22,11 @@ namespace Infraestructure.Repositories
             _context.SaveChanges();
             return pas.UserId;
         }
+
+        public List<Passenger> GetAll()
+        {
+            return _context.Passengers.ToList();
+        }
+
     }
 }
