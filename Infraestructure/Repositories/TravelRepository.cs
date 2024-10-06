@@ -17,6 +17,13 @@ namespace Infraestructure.Repositories
             _context = context;
         }
 
+        public int Add(Travel item)
+        {
+            _context.Travels.Add(item);
+            _context.SaveChanges();
+            return item.TavelId;
+        }
+
         public List<Travel> GetAll()
         {
             return _context.Travels.ToList();

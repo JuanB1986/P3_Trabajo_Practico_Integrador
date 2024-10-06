@@ -26,7 +26,9 @@ builder.Services.AddSwaggerGen();
 
 // Register your services and repositories
 builder.Services.AddTransient<PassengerRepository>();
-// Other services and repositories can be registered here
+builder.Services.AddTransient<CarRepository>();
+builder.Services.AddTransient<TravelRepository>();
+builder.Services.AddTransient<DriverRepository>();  
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:DBConnectionString"],
