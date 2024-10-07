@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TPI-Viajes-Compartidos")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c5b91ad19138781fc4e259c8c13d86c5e0818e05")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9d43cff0b6e893115ae69189bb4a77a6e37e1048")]
 [assembly: System.Reflection.AssemblyProductAttribute("TPI-Viajes-Compartidos")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TPI-Viajes-Compartidos")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

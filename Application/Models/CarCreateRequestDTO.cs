@@ -9,8 +9,6 @@ namespace Application.Models
 {
     public class CarCreateRequestDTO
     {
-
-        [Required] public int CarId { get; set; }
         [Required] public string Brand { get; set; }
         [Required] public int Model { get; set; }
         [Required] public int Kilometers { get; set; }

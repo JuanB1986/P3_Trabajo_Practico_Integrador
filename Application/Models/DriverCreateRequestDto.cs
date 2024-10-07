@@ -10,7 +10,6 @@ namespace Application.Models
 {
     public class DriverCreateRequestDto
     {
-        [Required] public int UserId { get; set; }
         [Required] public string Name { get; set; }
         [Required] public string LastName { get; set; }
         [Required] public string PhoneNumber { get; set; }

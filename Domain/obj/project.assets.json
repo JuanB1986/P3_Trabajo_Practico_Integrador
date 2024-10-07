@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\JM\\.nuget\\packages\\": {}
+    "C:\\Users\\Casa\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\Domain\\Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\Domain\\Domain.csproj",
       "projectName": "Domain",
-      "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\Domain\\Domain.csproj",
-      "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\Domain\\obj\\",
+      "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\Domain\\Domain.csproj",
+      "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\Domain\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
