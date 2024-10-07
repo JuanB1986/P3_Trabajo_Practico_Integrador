@@ -23,7 +23,6 @@ namespace TPI_Viajes_Compartidos.Controllers
         {
             Travel travel = new Travel()
             {
-                TavelId = travelDTO.TavelId,
                 StarDirection = travelDTO.StarDirection,
                 EndDirection = travelDTO.EndDirection,
                 StartTime = travelDTO.StartTime,
@@ -37,7 +36,7 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetTravels()
         {
-            var travels = _travelRepository.GetAll();
+            var travel = _travelRepository.GetAll();
             return Ok(_travelRepository.GetAll());
         }
 

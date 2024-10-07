@@ -10,22 +10,10 @@ namespace Application.Models
 {
     public class TravelCreateRequestDTO
     {
-        [Required]
-        public int TavelId { get; set; }
-
-        [Required]
-        public string StarDirection { get; set; }
-
-        [Required]
-        public string EndDirection { get; set; }
-
-        [Required]
-        public DateTime StartTime { get; set; }
-
-        [Required]
-        public float price { get; set; }
-
-        [Required]
-        public Driver Driver { get; set; }
+        [Required] public string StarDirection { get; set; }
+        [Required] public string EndDirection { get; set; }
+        [Required] public DateTime StartTime { get; set; }
+        [Required] public float price { get; set; }
+        [Required]  public Driver Driver { get; set; }
     }
 }

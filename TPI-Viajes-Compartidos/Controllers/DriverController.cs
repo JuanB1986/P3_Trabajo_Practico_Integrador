@@ -24,7 +24,6 @@ namespace TPI_Viajes_Compartidos.Controllers
         {
             Driver driver = new Driver()
             {
-                UserId = driverCreateRequestDTO.UserId,
                 Name = driverCreateRequestDTO.Name,
                 LastName = driverCreateRequestDTO.LastName,
                 PhoneNumber = driverCreateRequestDTO.PhoneNumber,
@@ -41,7 +40,9 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetDrivers() 
         {
-             return Ok(_driverRepository.GetAll());
+            var driver = _driverRepository.GetAll();
+            return Ok(driver);
+
         }
     }
 }

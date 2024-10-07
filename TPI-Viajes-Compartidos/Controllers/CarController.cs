@@ -23,7 +23,6 @@ namespace TPI_Viajes_Compartidos.Controllers
         {
             Car car = new Car()
             {
-                CarId = carRequestdto.CarId,
                 Brand = carRequestdto.Brand,
                 Model = carRequestdto.Model,
                 Kilometers = carRequestdto.Kilometers,
