@@ -16,17 +16,30 @@ namespace Infraestructure.Repositories
         {
             _context = context;
         }
+        public List<Driver> GetAllDriver()
+        {
+            return _context.Drivers.ToList();
+        }
 
-        public int Add(Driver driver)
+        public int AddDriver(Driver driver)
         {
             _context.Drivers.Add(driver);
             _context.SaveChanges();
-            return 0;                       //VER QUE SE RETORNA ACA
+            return driver.UserId;
         }
 
-        public List<Driver> GetAll()
+        public bool DeleteDriver(int id)
         {
-            return _context.Drivers.ToList();
+            var driver = _context.Drivers.FirstOrDefault(x => x.UserId == id);
+
+            if (driver != null)
+            {
+                _context.Drivers.Remove(driver);
+                _context.SaveChanges();
+                return true;
+            }
+
+            return false;
         }
     }
 }

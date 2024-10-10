@@ -1,4 +1,5 @@
-﻿using Application.Models;
+﻿using Application.Interfaces;
+using Application.Models;
 using Domain.Entities;
 using Infraestructure.Repositories;
 using Microsoft.AspNetCore.Http;
@@ -10,40 +11,38 @@ namespace TPI_Viajes_Compartidos.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private readonly PassengerRepository _passengerRepository;
+        private readonly IPassengerService _passengerService;
 
-        public PassengerController(PassengerRepository passengerRepository)
+        public PassengerController(IPassengerService passengerService)
         {
-            _passengerRepository = passengerRepository;
-        }
-
-        [HttpPost]
-        public IActionResult AddPassenger([FromBody] PassengerCreateRequestDto requestdto)
-        {
-            Passenger passenger = new Passenger()
-            {
-                Name = requestdto.Name,
-                LastName = requestdto.LastName,
-                PhoneNumber = requestdto.PhoneNumber,
-                Dni = requestdto.Dni,
-                Email = requestdto.Email,
-                Password = requestdto.Password,
-            };
-
-            return Ok(_passengerRepository.Add(passenger));
+            _passengerService = passengerService;
         }
 
         [HttpGet]
         public IActionResult GetPassengers()
         {
-            var passanger = _passengerRepository.GetAll();
+            var passanger = _passengerService.Get();
             return Ok(passanger);
-
         }
 
+        [HttpPost]
+        public IActionResult Add([FromBody] PassengerCreateRequestDto requestDto) 
+        {
+            return Ok(_passengerService.Add(requestDto));
+        }
 
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var result = _passengerService.Delete(id);
 
+            if (result)
+            {
+                return Ok(new { Message = "Passenger deleted successfully." });
+            }
 
+            return NotFound(new { Message = "Passenger not found." });
+        }
 
     }
 }
