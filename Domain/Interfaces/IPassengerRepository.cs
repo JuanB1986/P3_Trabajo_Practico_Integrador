@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IPassengerRepository
-    {
-        public List<Passenger> GetAllPassenger();
-        public int AddPassenger(Passenger passenger);
-        public bool DeletePassenger(int id);
-
+    public interface IPassengerRepository : IBaseRepository<Passenger> 
+    { 
     }
+
 }

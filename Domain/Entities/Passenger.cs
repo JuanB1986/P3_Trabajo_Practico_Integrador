@@ -8,6 +8,6 @@ namespace Domain.Entities
 {
     public class Passenger : User
     {
-        public ICollection<Travel> Reservations { get; set; } = new List<Travel>();
+        public List<int> ReservationsIDs { get; set; } = new List<int>();
     }
 }

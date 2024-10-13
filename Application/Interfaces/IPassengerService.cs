@@ -10,8 +10,10 @@ namespace Application.Interfaces
 {
     public interface IPassengerService
     {
-        public List<Passenger> Get();
-        public int Add(PassengerCreateRequestDto requestdto);
-        public bool Delete(int id);
+        int Add(PassengerCreateDto requestdto);
+        List<Passenger> GetAll();
+        Passenger GetById(int Id);
+        bool Update(int Id, PassengerUpdateDto requestDto);
+        bool Delete(int Id);
     }
 }

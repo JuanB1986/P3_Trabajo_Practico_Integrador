@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Interfaces
 {
-    public interface IDriverRepository
+    public interface IDriverRepository : IBaseRepository<Driver>
     {
-        public List<Driver> GetAllDriver();
-        public int AddDriver(Driver driver);
-        public bool DeleteDriver(int id);
-
     }
 }

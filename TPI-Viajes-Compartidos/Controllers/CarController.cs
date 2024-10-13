@@ -1,4 +1,6 @@
-﻿using Application.Models;
+﻿using Application.Interfaces;
+using Application.Models;
+using Application.Services;
 using Domain.Entities;
 using Domain.Interfaces;
 using Infraestructure.Repositories;
@@ -11,37 +13,71 @@ namespace TPI_Viajes_Compartidos.Controllers
     [ApiController]
     public class CarController : ControllerBase
     {
-        private readonly CarRepository _carRepository;
+        private readonly ICarService _carService;
 
-        public CarController(CarRepository carRepository) //Constructor: inicia carRepository
+        public CarController(ICarService carService)
         {
-            _carRepository = carRepository;
+            _carService = carService;
         }
 
+        // CREATE
         [HttpPost]
-        public IActionResult AddCar([FromBody] CarCreateRequestDTO carRequestdto)
+        public IActionResult CreateCar([FromBody] CarCreateDto requestDto)
         {
-            Car car = new Car()
-            {
-                Brand = carRequestdto.Brand,
-                Model = carRequestdto.Model,
-                Kilometers = carRequestdto.Kilometers,
-                LicensePlate = carRequestdto.LicensePlate,
-                IsAvailable = carRequestdto.IsAvailable,
-                Capacity= carRequestdto.Capacity
-
-            };
-
-            return Ok(_carRepository.Add(car));
+            var car = _carService.Add(requestDto);
+            return Ok(car);
         }
 
+        // READ
         [HttpGet]
         public IActionResult GetCars()
         {
-            var car = _carRepository.GetAll();
+            var car = _carService.GetAll();
             return Ok(car);
-
         }
 
+        [HttpGet("{Id}")]
+        public IActionResult GetCarById(int Id)
+        {
+            try
+            {
+                var car = _carService.GetById(Id);
+                return Ok(car);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
+
+        // UPDATE
+        [HttpPut("{Id}")]
+        public IActionResult Update(int Id, [FromBody] CarUpdateDto requestDto)
+        {
+            try
+            {
+                var result = _carService.Update(Id, requestDto);
+                return Ok(new { Message = "Car updated successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
+
+        // DELETE
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            try
+            {
+                var result = _carService.Delete(Id);
+                return Ok(new { Message = "Car deleted successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
     }
 }

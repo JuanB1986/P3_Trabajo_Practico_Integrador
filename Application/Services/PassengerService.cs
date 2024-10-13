@@ -18,12 +18,8 @@ namespace Application.Services
             _passengerRepository = passengerRepository;
         }
 
-        public List<Passenger> Get()
-        {
-            return _passengerRepository.GetAllPassenger();
-        }
-        
-        public int Add(PassengerCreateRequestDto requestdto)
+        // CREATE
+        public int Add(PassengerCreateDto requestdto)
         {
             Passenger passenger = new Passenger()
             {
@@ -34,12 +30,41 @@ namespace Application.Services
                 Email = requestdto.Email,
                 Password = requestdto.Password,
             };
-            return _passengerRepository.AddPassenger(passenger);
+            return _passengerRepository.Add(passenger);
         }
 
-        public bool Delete(int id)
+        // READ
+        public List<Passenger> GetAll()
         {
-            return _passengerRepository.DeletePassenger(id);
+            return _passengerRepository.GetAll();
+        }
+
+        public Passenger GetById(int Id)
+        {
+            return _passengerRepository.GetById(Id);
+        }
+
+        // UPDATE
+        public bool Update(int Id, PassengerUpdateDto requestDto)
+        {
+            var passenger = _passengerRepository.GetById(Id);
+
+            passenger.Name = requestDto.Name;
+            passenger.LastName = requestDto.LastName;
+            passenger.PhoneNumber = requestDto.PhoneNumber;
+            passenger.Dni = requestDto.Dni;
+            passenger.Email = requestDto.Email;
+            passenger.Password = requestDto.Password;
+
+            return _passengerRepository.Update(passenger);
+        }
+
+        // DELETE
+        public bool Delete(int Id)
+        {
+            var passenger = _passengerRepository.GetById(Id);
+
+            return _passengerRepository.Delete(passenger);
         }
     }
 }

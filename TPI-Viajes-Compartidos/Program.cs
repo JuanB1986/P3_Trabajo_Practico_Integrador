@@ -28,15 +28,15 @@ builder.Services.AddSwaggerGen();
 
 //Repositories
 builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
-//builder.Services.AddScoped<IDriverRepository, DriverRepository>();
-//builder.Services.AddScoped<ICarRepository, CarRepository>();
-//builder.Services.AddScoped<ITravelRepository, TravelRepository>();
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 
 //Services
 builder.Services.AddScoped<IPassengerService, PassengerService>();
-//builder.Services.AddScoped<IDriverService, DriverService>();
-//builder.Services.AddScoped<ICarService, CarService>();
-//builder.Services.AddScoped<ITravelService, TravelService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ITravelService, TravelService>();
 
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

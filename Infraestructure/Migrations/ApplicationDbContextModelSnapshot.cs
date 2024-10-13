@@ -19,7 +19,7 @@ namespace Infraestructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
                 {
-                    b.Property<int>("CarId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -28,9 +28,6 @@ namespace Infraestructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<int>("Capacity")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("DriverUserId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsAvailable")
@@ -46,18 +43,20 @@ namespace Infraestructure.Migrations
                     b.Property<int>("Model")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("CarId");
-
-                    b.HasIndex("DriverUserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Cars");
                 });
 
             modelBuilder.Entity("Domain.Entities.Driver", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
+
+                    b.Property<string>("CarsId")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Dni")
                         .IsRequired()
@@ -83,14 +82,18 @@ namespace Infraestructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("UserId");
+                    b.Property<string>("TravelIds")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Drivers");
                 });
 
             modelBuilder.Entity("Domain.Entities.Passenger", b =>
                 {
-                    b.Property<int>("UserId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -118,94 +121,48 @@ namespace Infraestructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("UserId");
+                    b.Property<string>("ReservationsIDs")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
 
                     b.ToTable("Passengers");
                 });
 
             modelBuilder.Entity("Domain.Entities.Travel", b =>
                 {
-                    b.Property<int>("TavelId")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DriverUserId")
+                    b.Property<int>("DriverId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("EndDirection")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("StarDirection")
+                    b.Property<string>("PassengerlIds")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<decimal>("Price")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("StartDirection")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("TEXT");
 
-                    b.Property<float>("price")
-                        .HasColumnType("REAL");
+                    b.Property<int>("Status")
+                        .HasColumnType("INTEGER");
 
-                    b.HasKey("TavelId");
-
-                    b.HasIndex("DriverUserId");
+                    b.HasKey("Id");
 
                     b.ToTable("Travels");
-                });
-
-            modelBuilder.Entity("PassengerTravel", b =>
-                {
-                    b.Property<int>("PassengersUserId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("ReservationsTavelId")
-                        .HasColumnType("INTEGER");
-
-                    b.HasKey("PassengersUserId", "ReservationsTavelId");
-
-                    b.HasIndex("ReservationsTavelId");
-
-                    b.ToTable("PassengerTravel");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Car", b =>
-                {
-                    b.HasOne("Domain.Entities.Driver", null)
-                        .WithMany("Cars")
-                        .HasForeignKey("DriverUserId");
-                });
-
-            modelBuilder.Entity("Domain.Entities.Travel", b =>
-                {
-                    b.HasOne("Domain.Entities.Driver", "Driver")
-                        .WithMany("Travels")
-                        .HasForeignKey("DriverUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Driver");
-                });
-
-            modelBuilder.Entity("PassengerTravel", b =>
-                {
-                    b.HasOne("Domain.Entities.Passenger", null)
-                        .WithMany()
-                        .HasForeignKey("PassengersUserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Travel", null)
-                        .WithMany()
-                        .HasForeignKey("ReservationsTavelId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("Domain.Entities.Driver", b =>
-                {
-                    b.Navigation("Cars");
-
-                    b.Navigation("Travels");
                 });
 #pragma warning restore 612, 618
         }

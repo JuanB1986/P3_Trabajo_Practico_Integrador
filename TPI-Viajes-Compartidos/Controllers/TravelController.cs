@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Application.Models;
 using Domain.Entities;
+using Application.Interfaces;
+using Application.Services;
 
 namespace TPI_Viajes_Compartidos.Controllers
 {
@@ -10,36 +12,72 @@ namespace TPI_Viajes_Compartidos.Controllers
     [ApiController]
     public class TravelController : ControllerBase
     {
-        private readonly TravelRepository _travelRepository;
+        private readonly ITravelService _travelService;
 
-        public TravelController(TravelRepository travelRepository) //Constructor: inicia travelRepository
+        public TravelController(ITravelService travelService)
         {
-            _travelRepository = travelRepository;
-        }   
-
-
-        [HttpPost]
-        public IActionResult AddTravels([FromBody] TravelCreateRequestDTO travelDTO)
-        {
-            Travel travel = new Travel()
-            {
-                StarDirection = travelDTO.StarDirection,
-                EndDirection = travelDTO.EndDirection,
-                StartTime = travelDTO.StartTime,
-                price = travelDTO.price,
-                Driver = travelDTO.Driver
-            };
-
-            return Ok(_travelRepository.Add(travel));
+            _travelService = travelService;
         }
 
+        // CREATE
+        [HttpPost]
+        public IActionResult CreateTravel([FromBody] TravelCreateDto requestDto)
+        {
+            var travel = _travelService.Add(requestDto);
+            return Ok(travel);
+        }
+
+        // READ
         [HttpGet]
         public IActionResult GetTravels()
         {
-            var travel = _travelRepository.GetAll();
-            return Ok(_travelRepository.GetAll());
+            var travels = _travelService.GetAll();
+            return Ok(travels);
         }
 
+        [HttpGet("{Id}")]
+        public IActionResult GetTravelById(int Id)
+        {
+            try
+            {
+                var travel = _travelService.GetById(Id);
+                return Ok(travel);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
 
+        // UPDATE
+        [HttpPut("{Id}")]
+        public IActionResult Update(int Id, [FromBody] TravelUpdateDto requestDto)
+        {
+            try
+            {
+                var result = _travelService.Update(Id, requestDto);
+                return Ok(new { Message = "Travel updated successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
+
+        // DELETE
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            try
+            {
+                var result = _travelService.Delete(Id);
+                return Ok(new { Message = "Travel deleted successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
     }
 }
+
