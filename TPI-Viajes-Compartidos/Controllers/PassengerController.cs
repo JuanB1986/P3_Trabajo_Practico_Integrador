@@ -1,8 +1,11 @@
-﻿using Application.Models;
+﻿using Application.Interfaces;
+using Application.Models;
+using Application.Services;
 using Domain.Entities;
 using Infraestructure.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace TPI_Viajes_Compartidos.Controllers
 {
@@ -10,40 +13,71 @@ namespace TPI_Viajes_Compartidos.Controllers
     [ApiController]
     public class PassengerController : ControllerBase
     {
-        private readonly PassengerRepository _passengerRepository;
+        private readonly IPassengerService _passengerService;
 
-        public PassengerController(PassengerRepository passengerRepository)
+        public PassengerController(IPassengerService passengerService)
         {
-            _passengerRepository = passengerRepository;
+            _passengerService = passengerService;
         }
 
+        // CREATE
         [HttpPost]
-        public IActionResult AddPassenger([FromBody] PassengerCreateRequestDto requestdto)
+        public IActionResult CreatePassenger([FromBody] PassengerCreateDto requestDto) 
         {
-            Passenger passenger = new Passenger()
-            {
-                Name = requestdto.Name,
-                LastName = requestdto.LastName,
-                PhoneNumber = requestdto.PhoneNumber,
-                Dni = requestdto.Dni,
-                Email = requestdto.Email,
-                Password = requestdto.Password,
-            };
-
-            return Ok(_passengerRepository.Add(passenger));
+            var passenger = _passengerService.Add(requestDto);
+            return Ok(passenger);
         }
 
+        // READ
         [HttpGet]
         public IActionResult GetPassengers()
         {
-            var passanger = _passengerRepository.GetAll();
-            return Ok(passanger);
-
+            var passenger = _passengerService.GetAll();
+            return Ok(passenger);
         }
 
+        [HttpGet("{Id}")]
+        public IActionResult GetPassengerById(int Id)
+        {
+            try
+            {
+                var passenger = _passengerService.GetById(Id);
+                return Ok(passenger);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
 
+        // UPDATE
+        [HttpPut("{Id}")]
+        public IActionResult Update(int Id, [FromBody] PassengerUpdateDto requestDto)
+        {
+            try
+            {
+                var result = _passengerService.Update(Id, requestDto);
+                return Ok(new { Message = "Passenger updated successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
 
-
-
+        // DELETE
+        [HttpDelete("{Id}")]
+        public IActionResult Delete(int Id)
+        {
+            try
+            {
+                var result = _passengerService.Delete(Id);
+                return Ok(new { Message = "Passenger deleted successfully." });
+            }
+            catch (InvalidOperationException exception)
+            {
+                return NotFound(new { Message = exception.Message });
+            }
+        }
     }
 }

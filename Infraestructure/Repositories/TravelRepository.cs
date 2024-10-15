@@ -9,24 +9,11 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositories
 {
-    public class TravelRepository : ITravelRepository
+    public class TravelRepository : BaseRepository<Travel>, ITravelRepository
     {
-        private readonly ApplicationDbContext _context;
-        public TravelRepository(ApplicationDbContext context)
+        public TravelRepository(ApplicationDbContext context) : base(context) 
         {
-            _context = context;
-        }
 
-        public int Add(Travel item)
-        {
-            _context.Travels.Add(item);
-            _context.SaveChanges();
-            return item.TavelId;
-        }
-
-        public List<Travel> GetAll()
-        {
-            return _context.Travels.ToList();
         }
     }
 }

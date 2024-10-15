@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.Interfaces;
 using Infraestructure.Data;
 using System;
 using System.Collections.Generic;
@@ -8,27 +9,11 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositories
 {
-    public class CarRepository
+    public class CarRepository : BaseRepository<Car>, ICarRepository
     {
-
-        private readonly ApplicationDbContext _context;
-        public CarRepository(ApplicationDbContext context)
+        public CarRepository(ApplicationDbContext context) : base(context) 
         {
-            _context = context;
-        }
-
-        public int Add(Car car)
-        {
-            _context.Cars.Add(car);
-            _context.SaveChanges();
-            return car.CarId;
-        }
-
-        public List<Car> GetAll()
-        {
-            return _context.Cars.ToList();
-        }
-
         
+        }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using Domain.Entities;
+using Domain.Interfaces;
 using Infraestructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,25 +10,11 @@ using System.Threading.Tasks;
 
 namespace Infraestructure.Repositories
 {
-    public class PassengerRepository
+    public class PassengerRepository : BaseRepository<Passenger>, IPassengerRepository
     {
-        private readonly ApplicationDbContext _context;
-        public PassengerRepository(ApplicationDbContext context)
+        public PassengerRepository(ApplicationDbContext context) : base(context) 
         {
-            _context = context;
+        
         }
-
-        public int Add(Passenger pas)
-        {
-            _context.Passengers.Add(pas);
-            _context.SaveChanges();
-            return pas.UserId;
-        }
-
-        public List<Passenger> GetAll()
-        {
-            return _context.Passengers.ToList();
-        }
-
     }
 }

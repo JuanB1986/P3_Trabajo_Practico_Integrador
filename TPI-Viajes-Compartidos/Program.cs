@@ -1,7 +1,9 @@
+using Application.Interfaces;
 using Application.Services;
 using Domain.Interfaces;
 using Infraestructure.Data;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,11 +26,18 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Register your services and repositories
-builder.Services.AddTransient<PassengerRepository>();
-builder.Services.AddTransient<CarRepository>();
-builder.Services.AddTransient<TravelRepository>();
-builder.Services.AddTransient<DriverRepository>();  
+//Repositories
+builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ITravelRepository, TravelRepository>();
+
+//Services
+builder.Services.AddScoped<IPassengerService, PassengerService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ITravelService, TravelService>();
+
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:DBConnectionString"],
