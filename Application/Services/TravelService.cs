@@ -14,22 +14,26 @@ namespace Application.Services
     public class TravelService : ITravelService
     {
         private readonly ITravelRepository _travelRepository;
+        private readonly IDriverRepository _driverRepository;
 
-        public TravelService(ITravelRepository travelRepository)
+        public TravelService(ITravelRepository travelRepository, IDriverRepository driverRepository)
         {
             _travelRepository = travelRepository;
+            _driverRepository = driverRepository;
         }
+               
 
         // CREATE
         public int Add(TravelCreateDto requestDto)
         {
+
             var travel = new Travel
             {
                 StartDirection = requestDto.StartDirection,
                 EndDirection = requestDto.EndDirection,
                 StartTime = requestDto.StartTime,
                 Price = requestDto.Price,
-                DriverId = requestDto.DriverId,
+                Driver =  _driverRepository.GetById( requestDto.DriverId),
                 Status = TravelStatus.Pending 
             };
 

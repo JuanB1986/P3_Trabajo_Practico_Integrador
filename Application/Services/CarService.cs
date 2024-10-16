@@ -14,9 +14,11 @@ namespace Application.Services
     public class CarService : ICarService
     {
         private readonly ICarRepository _carRepository;
+        
         public CarService(ICarRepository carRepository)
         {
             _carRepository = carRepository;
+           
         }
 
         // CREATE
@@ -28,7 +30,8 @@ namespace Application.Services
                 Model = requestDto.Model,
                 Kilometers = requestDto.Kilometers,
                 LicensePlate = requestDto.LicensePlate,
-                Capacity = requestDto.Capacity
+                Capacity = requestDto.Capacity,
+                Driver = new Driver ()
             };
 
             return _carRepository.Add(car);

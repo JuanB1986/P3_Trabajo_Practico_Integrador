@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241011233235_InitialMigration")]
-    partial class InitialMigration
+    [Migration("20241015230657_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,6 +33,9 @@ namespace Infraestructure.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("DriverId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<bool>("IsAvailable")
                         .HasColumnType("INTEGER");
 
@@ -48,6 +51,8 @@ namespace Infraestructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DriverId");
+
                     b.ToTable("Cars");
                 });
 
@@ -56,10 +61,6 @@ namespace Infraestructure.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
-
-                    b.Property<string>("CarsId")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
 
                     b.Property<string>("Dni")
                         .IsRequired()
@@ -82,10 +83,6 @@ namespace Infraestructure.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("PhoneNumber")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TravelIds")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -124,10 +121,6 @@ namespace Infraestructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("ReservationsIDs")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.HasKey("Id");
 
                     b.ToTable("Passengers");
@@ -146,10 +139,6 @@ namespace Infraestructure.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("PassengerlIds")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<decimal>("Price")
                         .HasColumnType("TEXT");
 
@@ -165,7 +154,68 @@ namespace Infraestructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("DriverId");
+
                     b.ToTable("Travels");
+                });
+
+            modelBuilder.Entity("PassengerTravel", b =>
+                {
+                    b.Property<int>("PassengersId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ReservationsId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("PassengersId", "ReservationsId");
+
+                    b.HasIndex("ReservationsId");
+
+                    b.ToTable("PassengerTravel");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Car", b =>
+                {
+                    b.HasOne("Domain.Entities.Driver", "Driver")
+                        .WithMany("Cars")
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
+                });
+
+            modelBuilder.Entity("Domain.Entities.Travel", b =>
+                {
+                    b.HasOne("Domain.Entities.Driver", "Driver")
+                        .WithMany("Travel")
+                        .HasForeignKey("DriverId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Driver");
+                });
+
+            modelBuilder.Entity("PassengerTravel", b =>
+                {
+                    b.HasOne("Domain.Entities.Passenger", null)
+                        .WithMany()
+                        .HasForeignKey("PassengersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Domain.Entities.Travel", null)
+                        .WithMany()
+                        .HasForeignKey("ReservationsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Domain.Entities.Driver", b =>
+                {
+                    b.Navigation("Cars");
+
+                    b.Navigation("Travel");
                 });
 #pragma warning restore 612, 618
         }

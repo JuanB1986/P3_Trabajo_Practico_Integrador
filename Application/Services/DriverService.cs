@@ -23,16 +23,6 @@ namespace Application.Services
         // CREATE
         public int Add(DriverCreateDto requestDto)
         {
-            var car = new Car
-            {
-                Brand = requestDto.Car.Brand,
-                Model = requestDto.Car.Model,
-                Kilometers = requestDto.Car.Kilometers,
-                LicensePlate = requestDto.Car.LicensePlate,
-                Capacity = requestDto.Car.Capacity
-            };
-
-            var carId = _carRepository.Add(car);
 
             var driver = new Driver
             {
@@ -42,8 +32,23 @@ namespace Application.Services
                 Dni = requestDto.Dni,
                 Email = requestDto.Email,
                 Password = requestDto.Password,
-                CarsId = new List<int> { carId }
+                Cars = new List<Car>(),
+                Travel = new List<Travel>()
             };
+
+            var car = new Car
+            {
+                Brand = requestDto.Car.Brand,
+                Model = requestDto.Car.Model,
+                Kilometers = requestDto.Car.Kilometers,
+                LicensePlate = requestDto.Car.LicensePlate,
+                Capacity = requestDto.Car.Capacity,
+                Driver = driver,
+            };
+
+            _carRepository.Add(car);
+
+            driver.Cars.Add(car);
 
             return _driverRepository.Add(driver);
         }

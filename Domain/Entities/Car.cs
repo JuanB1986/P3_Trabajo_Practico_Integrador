@@ -17,6 +17,7 @@ namespace Domain.Entities
         public int Kilometers { get; set; }
         public string LicensePlate { get; set; } = string.Empty;
         public bool IsAvailable { get; set; } = true;
+        public Driver Driver { get; set; }
         public int Capacity { get; set; }
     }
 }

@@ -17,8 +17,8 @@ namespace Domain.Entities
         public string EndDirection { get; set; } = string.Empty;
         public DateTime StartTime { get; set; }
         public decimal Price { get; set; }
-        public int DriverId { get; set; }
-        public List<int> PassengerlIds { get; set; } = new List<int>();
+        public Driver Driver { get; set; }
+        public List<Passenger> Passengers { get; set; } = new List<Passenger>();
         public TravelStatus Status { get; set; } = TravelStatus.Pending;
     }
 }

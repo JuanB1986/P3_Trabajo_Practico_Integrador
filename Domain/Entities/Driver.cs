@@ -8,7 +8,7 @@ namespace Domain.Entities
 {
     public class Driver : User
     {
-        public List<int> CarsId { get; set; } = new List<int>();
-        public List<int> TravelIds { get; set; } = new List<int>();
+        public List<Car> Cars { get; set; } = new List<Car>();
+        public List<Travel> Travel { get; set; } = new List<Travel>();
     }
 }
