@@ -11,7 +11,7 @@ namespace Infraestructure.Repositories
 {
     public class BaseRepository<T> where T : class, IEntity
     {
-        private readonly ApplicationDbContext _context;
+        protected readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;
 
         public BaseRepository(ApplicationDbContext context)

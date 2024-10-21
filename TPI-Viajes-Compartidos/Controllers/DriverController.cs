@@ -50,6 +50,20 @@ namespace TPI_Viajes_Compartidos.Controllers
             }
         }
 
+        [HttpGet("with-cars/{Id}")] 
+        public IActionResult GetDriverWithCars(int Id)
+        {
+            try
+            {
+                var driver = _driverService.GetDriverWithCars(Id);
+                return Ok(driver);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
+
         // UPDATE
         [HttpPut("{Id}")]
         public IActionResult Update(int Id, [FromBody] DriverUpdateDto requestDto)

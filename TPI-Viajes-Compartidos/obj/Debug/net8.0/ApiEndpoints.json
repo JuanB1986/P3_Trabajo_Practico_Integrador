@@ -158,6 +158,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TPI_Viajes_Compartidos.Controllers.DriverController",
+    "Method": "GetDriverWithCars",
+    "RelativePath": "api/Driver/with-cars/{Id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "Id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.PassengerController",
     "Method": "CreatePassenger",
     "RelativePath": "api/Passenger",
