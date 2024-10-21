@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
 using Infraestructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,12 @@ namespace Infraestructure.Repositories
     {
         public DriverRepository(ApplicationDbContext context) : base(context) 
         {
-        
+        }
+        public Driver? GetDriverWithCars(int id)
+        {
+            return _context.Drivers
+                .Include(car => car.Cars)
+                .FirstOrDefault(car => car.Id == id);
         }
     }
 }

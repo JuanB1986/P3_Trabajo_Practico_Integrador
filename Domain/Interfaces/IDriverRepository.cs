@@ -9,5 +9,6 @@ namespace Domain.Interfaces
 {
     public interface IDriverRepository : IBaseRepository<Driver>
     {
+        Driver? GetDriverWithCars(int id);
     }
 }

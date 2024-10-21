@@ -23,7 +23,6 @@ namespace Application.Services
         // CREATE
         public int Add(DriverCreateDto requestDto)
         {
-
             var driver = new Driver
             {
                 Name = requestDto.Name,
@@ -32,9 +31,11 @@ namespace Application.Services
                 Dni = requestDto.Dni,
                 Email = requestDto.Email,
                 Password = requestDto.Password,
-                Cars = new List<Car>(),
+                Cars = new List<Car>(), 
                 Travel = new List<Travel>()
             };
+
+            int driverId = _driverRepository.Add(driver); 
 
             var car = new Car
             {
@@ -43,14 +44,16 @@ namespace Application.Services
                 Kilometers = requestDto.Car.Kilometers,
                 LicensePlate = requestDto.Car.LicensePlate,
                 Capacity = requestDto.Car.Capacity,
-                Driver = driver,
+                Driver = driver
             };
 
             _carRepository.Add(car);
 
             driver.Cars.Add(car);
 
-            return _driverRepository.Add(driver);
+            _driverRepository.Update(driver);
+
+            return driverId;
         }
 
         // READ
@@ -62,6 +65,11 @@ namespace Application.Services
         public Driver GetById(int Id)
         {
             return _driverRepository.GetById(Id);
+        }
+
+        public Driver? GetDriverWithCars(int Id)
+        {
+            return _driverRepository.GetDriverWithCars(Id);
         }
 
         // UPDATE

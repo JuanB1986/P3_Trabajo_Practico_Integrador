@@ -13,6 +13,7 @@ namespace Application.Interfaces
         int Add(DriverCreateDto driverDto);
         List<Driver> GetAll();
         Driver GetById(int Id);
+        Driver? GetDriverWithCars(int Id);
         bool Update(int Id, DriverUpdateDto requestDto);
         bool Delete(int Id);
     }
