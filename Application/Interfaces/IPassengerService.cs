@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -11,8 +12,8 @@ namespace Application.Interfaces
     public interface IPassengerService
     {
         int Add(PassengerCreateDto requestdto);
-        List<Passenger> GetAll();
-        Passenger GetById(int Id);
+        IEnumerable<PassengerDto> GetAllPassengers();
+        PassengerDto? GetPassengerById(int Id);
         bool Update(int Id, PassengerUpdateDto requestDto);
         bool Delete(int Id);
     }

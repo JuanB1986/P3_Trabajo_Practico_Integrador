@@ -8,7 +8,10 @@ using System.Threading.Tasks;
 namespace Domain.Interfaces
 {
     public interface IPassengerRepository : IBaseRepository<Passenger> 
-    { 
+    {
+        IEnumerable<Passenger> GetAllPassengers();
+        Passenger? GetPassengerById(int Id);
+        Passenger? GetPassengerByName(string Name);
     }
 
 }

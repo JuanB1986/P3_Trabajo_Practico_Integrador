@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,8 +11,8 @@ namespace Application.Interfaces
 {
     public interface ICarService
     {
-        int Add(CarCreateDto requestdto);
-        List<Car> GetAll();
+        int Add(CarCreateRequest requestdto);
+        IEnumerable<CarDto> GetAllCars();
         Car GetById(int Id);
         bool Update(int Id, CarUpdateDto requestdto);
         bool Delete(int Id);

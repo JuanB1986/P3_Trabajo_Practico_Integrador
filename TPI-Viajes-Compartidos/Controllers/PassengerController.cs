@@ -1,8 +1,10 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Application.Services;
 using Domain.Entities;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -10,6 +12,7 @@ using System;
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles ="Passenger")]
     [ApiController]
     public class PassengerController : ControllerBase
     {
@@ -22,7 +25,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
-        public IActionResult CreatePassenger([FromBody] PassengerCreateDto requestDto) 
+        public IActionResult CreatePassenger([FromBody] PassengerCreateDto requestDto)
         {
             var passenger = _passengerService.Add(requestDto);
             return Ok(passenger);
@@ -32,23 +35,18 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetPassengers()
         {
-            var passenger = _passengerService.GetAll();
+            var passenger = _passengerService.GetAllPassengers();
             return Ok(passenger);
         }
 
-        [HttpGet("{Id}")]
-        public IActionResult GetPassengerById(int Id)
+        [HttpGet("{id}")]
+        public IActionResult GetPassengerById([FromRoute] int Id)
         {
-            try
-            {
-                var passenger = _passengerService.GetById(Id);
-                return Ok(passenger);
-            }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
+            var passenger = _passengerService.GetPassengerById(Id);
+            return Ok(passenger);
         }
+
+
 
         // UPDATE
         [HttpPut("{Id}")]

@@ -9,5 +9,6 @@ namespace Domain.Interfaces
 {
     public interface ICarRepository : IBaseRepository<Car>
     {
+        IEnumerable<Car> GetAllCars();
     }
 }

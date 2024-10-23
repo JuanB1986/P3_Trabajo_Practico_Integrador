@@ -11,9 +11,13 @@ namespace Infraestructure.Repositories
 {
     public class CarRepository : BaseRepository<Car>, ICarRepository
     {
-        public CarRepository(ApplicationDbContext context) : base(context) 
+        public CarRepository(ApplicationDbContext context) : base(context)
         {
-        
+        }
+        public IEnumerable<Car> GetAllCars()
+        {
+            var list = _context.Cars.ToList();
+            return list;
         }
     }
 }

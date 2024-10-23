@@ -3,6 +3,7 @@ using Application.Services;
 using Domain.Interfaces;
 using Infraestructure.Data;
 using Infraestructure.Repositories;
+using Infraestructure.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -14,6 +15,7 @@ using System.Text;
 
 
 using static Infraestructure.Services.AuthenticationService;
+using AuthenticationService = Infraestructure.Services.AuthenticationService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -72,7 +74,8 @@ builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 //Services
 builder.Services.Configure<AutenticacionServiceOptions>(
     builder.Configuration.GetSection(AutenticacionServiceOptions.AutenticacionService));
-
+builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IPassengerService, PassengerService>();
 builder.Services.AddScoped<IDriverService, DriverService>();
 builder.Services.AddScoped<ICarService, CarService>();
@@ -82,7 +85,6 @@ builder.Services.AddScoped<ITravelService, TravelService>();
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlite(builder.Configuration["ConnectionStrings:DBConnectionString"],
     b => b.MigrationsAssembly("Infraestructure")));
-
 
 
 

@@ -11,5 +11,8 @@ namespace Domain.Interfaces
     {
         Driver? GetDriverWithCars(int id);
         Driver? GetDriverByName(string name);
+        IEnumerable<Driver> GetAllDrivers();
+        Driver? GetDriverById(int Id);
+
     }
 }

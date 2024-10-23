@@ -9,6 +9,6 @@ namespace Domain.Entities
     public class Driver : User
     {
         public List<Car> Cars { get; set; } = new List<Car>();
-        public List<Travel> Travel { get; set; } = new List<Travel>();
+        public List<Travel> Travels { get; set; } = new List<Travel>();
     }
 }

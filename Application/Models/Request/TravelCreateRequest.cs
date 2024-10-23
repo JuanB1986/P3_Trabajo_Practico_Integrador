@@ -6,20 +6,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Application.Models
+namespace Application.Models.Request
 {
-    public class TravelCreateDto
+    public class TravelCreateRequest
     {
-        [Required]
         public string StartDirection { get; set; } = string.Empty;
 
-        [Required]
         public string EndDirection { get; set; } = string.Empty;
 
-        [Required]
         public DateTime StartTime { get; set; }
 
-        [Required]
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         public decimal Price { get; set; }
 

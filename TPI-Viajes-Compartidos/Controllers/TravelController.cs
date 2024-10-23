@@ -5,6 +5,7 @@ using Application.Models;
 using Domain.Entities;
 using Application.Interfaces;
 using Application.Services;
+using Application.Models.Request;
 
 namespace TPI_Viajes_Compartidos.Controllers
 {
@@ -21,7 +22,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
-        public IActionResult CreateTravel([FromBody] TravelCreateDto requestDto)
+        public IActionResult CreateTravel([FromBody] TravelCreateRequest requestDto)
         {
             var travel = _travelService.Add(requestDto);
             return Ok(travel);
@@ -31,7 +32,7 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetTravels()
         {
-            var travels = _travelService.GetAll();
+            var travels = _travelService.GetAllTravels();
             return Ok(travels);
         }
 

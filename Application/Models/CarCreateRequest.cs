@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.Models
 {
-    public class CarUpdateDto
+    public class CarCreateRequest
     {
         public string Brand { get; set; } = string.Empty;
         public int Model { get; set; }

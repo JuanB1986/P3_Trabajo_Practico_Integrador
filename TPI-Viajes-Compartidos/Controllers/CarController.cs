@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Application.Services;
 using Domain.Entities;
 using Domain.Interfaces;
@@ -22,7 +23,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
-        public IActionResult CreateCar([FromBody] CarCreateDto requestDto)
+        public IActionResult CreateCar([FromBody] CarCreateRequest requestDto)
         {
             var car = _carService.Add(requestDto);
             return Ok(car);
@@ -32,7 +33,7 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetCars()
         {
-            var car = _carService.GetAll();
+            var car = _carService.GetAllCars();
             return Ok(car);
         }
 

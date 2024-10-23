@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    public class Car : IEntity 
+    public class Car : IEntity
     {
         public int Id { get; set; }
         public string Brand { get; set; } = string.Empty;
@@ -19,8 +19,5 @@ namespace Domain.Entities
         public string LicensePlate { get; set; } = string.Empty;
         public bool IsAvailable { get; set; } = true;
         public int Capacity { get; set; }
-
-        //[JsonIgnore]
-        //public Driver? Driver { get; set; }
     }
 }

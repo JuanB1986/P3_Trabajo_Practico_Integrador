@@ -1,4 +1,5 @@
 ﻿using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -10,10 +11,9 @@ namespace Application.Interfaces
 {
     public interface IDriverService
     {
-        int Add(DriverCreateDto driverDto);
-        List<Driver> GetAll();
-        Driver GetById(int Id);
-        Driver? GetDriverWithCars(int Id);
+        int Add(DriverCreateRequest driverDto);
+        IEnumerable<DriverDto> GetAllDrivers();
+        DriverDto? GetDriverById(int Id);
         bool Update(int Id, DriverUpdateDto requestDto);
         bool Delete(int Id);
     }

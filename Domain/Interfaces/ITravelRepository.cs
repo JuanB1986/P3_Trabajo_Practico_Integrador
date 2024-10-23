@@ -9,5 +9,6 @@ namespace Domain.Interfaces
 {
     public interface ITravelRepository : IBaseRepository<Travel>
     {
+        IEnumerable<Travel> GetAllTravels();
     }
 }

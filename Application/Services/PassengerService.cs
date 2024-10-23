@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using Domain.Interfaces;
 using System;
@@ -34,14 +35,21 @@ namespace Application.Services
         }
 
         // READ
-        public List<Passenger> GetAll()
+        public IEnumerable<PassengerDto> GetAllPassengers()
         {
-            return _passengerRepository.GetAll();
+            var list = _passengerRepository.GetAllPassengers();
+            return PassengerDto.CreateList(list);
         }
 
-        public Passenger GetById(int Id)
+        public PassengerDto GetPassengerById(int Id)
         {
-            return _passengerRepository.GetById(Id);
+            var passenger = _passengerRepository.GetPassengerById(Id);
+            if (passenger == null)
+            {
+                throw new KeyNotFoundException($"No passenger was found with ID {Id}");
+            }
+
+            return PassengerDto.CreatePassenger(passenger);
         }
 
         // UPDATE

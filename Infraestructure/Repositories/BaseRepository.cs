@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.Repositories
 {
-    public class BaseRepository<T> where T : class, IEntity
+    public class BaseRepository<T> where T : class, IEntity 
     {
         protected readonly ApplicationDbContext _context;
         private readonly DbSet<T> _dbSet;

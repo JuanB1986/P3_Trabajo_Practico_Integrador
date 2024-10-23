@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using Domain.Interfaces;
 using System;
@@ -14,15 +15,15 @@ namespace Application.Services
     public class CarService : ICarService
     {
         private readonly ICarRepository _carRepository;
-        
+
         public CarService(ICarRepository carRepository)
         {
             _carRepository = carRepository;
-           
+
         }
 
         // CREATE
-        public int Add(CarCreateDto requestDto)
+        public int Add(CarCreateRequest requestDto)
         {
             Car car = new Car()
             {
@@ -31,16 +32,16 @@ namespace Application.Services
                 Kilometers = requestDto.Kilometers,
                 LicensePlate = requestDto.LicensePlate,
                 Capacity = requestDto.Capacity,
-               // Driver = new Driver ()
             };
 
             return _carRepository.Add(car);
         }
 
         // READ
-        public List<Car> GetAll()
+        public IEnumerable<CarDto> GetAllCars()
         {
-            return _carRepository.GetAll();
+            var list = _carRepository.GetAllCars();
+            return list.Select(car => CarDto.CreateCar(car)).ToList();
         }
 
         public Car GetById(int Id)
@@ -61,7 +62,7 @@ namespace Application.Services
 
             return _carRepository.Update(car);
         }
-        
+
         // DELETE
         public bool Delete(int Id)
         {

@@ -1,8 +1,10 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Application.Services;
 using Domain.Entities;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
@@ -10,6 +12,7 @@ using System.ComponentModel.DataAnnotations;
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles ="Driver")]
     [ApiController]
     public class DriverController : ControllerBase
     {
@@ -22,7 +25,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
-        public IActionResult CreateDriver([FromBody] DriverCreateDto requestDto)
+        public IActionResult CreateDriver([FromBody] DriverCreateRequest requestDto)
         {
             var driver = _driverService.Add(requestDto);
             return Ok(driver);
@@ -32,7 +35,7 @@ namespace TPI_Viajes_Compartidos.Controllers
         [HttpGet]
         public IActionResult GetDrivers()
         {
-            var drivers = _driverService.GetAll();
+            var drivers = _driverService.GetAllDrivers();
             return Ok(drivers);
         }
 
@@ -41,24 +44,10 @@ namespace TPI_Viajes_Compartidos.Controllers
         {
             try
             {
-                var driver = _driverService.GetById(Id);
+                var driver = _driverService.GetDriverById(Id);
                 return Ok(driver);
             }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
-        }
-
-        [HttpGet("with-cars/{Id}")] 
-        public IActionResult GetDriverWithCars(int Id)
-        {
-            try
-            {
-                var driver = _driverService.GetDriverWithCars(Id);
-                return Ok(driver);
-            }
-            catch (InvalidOperationException ex)
+            catch (KeyNotFoundException ex)
             {
                 return NotFound(new { Message = ex.Message });
             }

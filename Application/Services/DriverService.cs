@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using Domain.Interfaces;
 using System;
@@ -21,7 +22,7 @@ namespace Application.Services
             _carRepository = carRepository;
         }
         // CREATE
-        public int Add(DriverCreateDto requestDto)
+        public int Add(DriverCreateRequest requestDto)
         {
             var driver = new Driver
             {
@@ -31,11 +32,11 @@ namespace Application.Services
                 Dni = requestDto.Dni,
                 Email = requestDto.Email,
                 Password = requestDto.Password,
-                Cars = new List<Car>(), 
-                Travel = new List<Travel>()
+                Cars = new List<Car>(),
+                Travels = new List<Travel>()
             };
 
-            int driverId = _driverRepository.Add(driver); 
+            int driverId = _driverRepository.Add(driver);
 
             var car = new Car
             {
@@ -44,7 +45,6 @@ namespace Application.Services
                 Kilometers = requestDto.Car.Kilometers,
                 LicensePlate = requestDto.Car.LicensePlate,
                 Capacity = requestDto.Car.Capacity,
-                //Driver = driver
             };
 
             _carRepository.Add(car);
@@ -57,19 +57,20 @@ namespace Application.Services
         }
 
         // READ
-        public List<Driver> GetAll()
+        public IEnumerable<DriverDto> GetAllDrivers()
         {
-            return _driverRepository.GetAll();
+            var list = _driverRepository.GetAllDrivers();
+            return list.Select(driver => DriverDto.CreateDriver(driver)).ToList();
         }
 
-        public Driver GetById(int Id)
+        public DriverDto? GetDriverById(int Id)
         {
-            return _driverRepository.GetById(Id);
-        }
-
-        public Driver? GetDriverWithCars(int Id)
-        {
-            return _driverRepository.GetDriverWithCars(Id);
+            var driver = _driverRepository.GetDriverById(Id);
+            if (driver == null)
+            {
+                throw new KeyNotFoundException($"No driver was found with ID {Id}");
+            }
+            return DriverDto.CreateDriver(driver);
         }
 
         // UPDATE

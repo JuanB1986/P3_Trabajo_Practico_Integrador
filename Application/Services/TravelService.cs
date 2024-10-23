@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models;
+using Application.Models.Request;
 using Domain.Entities;
 using Domain.Enum;
 using Domain.Interfaces;
@@ -21,11 +22,17 @@ namespace Application.Services
             _travelRepository = travelRepository;
             _driverRepository = driverRepository;
         }
-               
+
 
         // CREATE
-        public int Add(TravelCreateDto requestDto)
+        public int Add(TravelCreateRequest requestDto)
         {
+            var driver = _driverRepository.GetDriverById(requestDto.DriverId);
+
+            if (driver == null)
+            {
+                throw new InvalidOperationException($"No se encontró un conductor con ID {requestDto.DriverId}");
+            }
 
             var travel = new Travel
             {
@@ -33,17 +40,18 @@ namespace Application.Services
                 EndDirection = requestDto.EndDirection,
                 StartTime = requestDto.StartTime,
                 Price = requestDto.Price,
-                Driver =  _driverRepository.GetById( requestDto.DriverId),
-                Status = TravelStatus.Pending 
+                Driver = driver,
+                Status = TravelStatus.Pending
             };
 
             return _travelRepository.Add(travel);
         }
 
         // READ
-        public List<Travel> GetAll()
+        public IEnumerable<TravelDto> GetAllTravels()
         {
-            return _travelRepository.GetAll();
+            var list = _travelRepository.GetAllTravels();
+            return TravelDto.CreateList(list);
         }
 
         public Travel GetById(int Id)
