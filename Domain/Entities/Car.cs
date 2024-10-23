@@ -20,7 +20,7 @@ namespace Domain.Entities
         public bool IsAvailable { get; set; } = true;
         public int Capacity { get; set; }
 
-        [JsonIgnore]
-        public Driver? Driver { get; set; }
+        //[JsonIgnore]
+        //public Driver? Driver { get; set; }
     }
 }

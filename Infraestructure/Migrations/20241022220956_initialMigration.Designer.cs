@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241015230657_initialMigration")]
+    [Migration("20241022220956_initialMigration")]
     partial class initialMigration
     {
         /// <inheritdoc />
@@ -33,7 +33,7 @@ namespace Infraestructure.Migrations
                     b.Property<int>("Capacity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DriverId")
+                    b.Property<int?>("DriverId")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("IsAvailable")
@@ -176,13 +176,9 @@ namespace Infraestructure.Migrations
 
             modelBuilder.Entity("Domain.Entities.Car", b =>
                 {
-                    b.HasOne("Domain.Entities.Driver", "Driver")
+                    b.HasOne("Domain.Entities.Driver", null)
                         .WithMany("Cars")
-                        .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Driver");
+                        .HasForeignKey("DriverId");
                 });
 
             modelBuilder.Entity("Domain.Entities.Travel", b =>

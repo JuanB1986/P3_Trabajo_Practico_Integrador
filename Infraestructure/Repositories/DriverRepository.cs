@@ -21,5 +21,13 @@ namespace Infraestructure.Repositories
                 .Include(car => car.Cars)
                 .FirstOrDefault(car => car.Id == id);
         }
+
+        public Driver? GetDriverByName(string name)
+        {
+            return _context.Drivers
+                .Include(car => car.Cars)
+                .FirstOrDefault (car => car.Name == name);
+        }
+
     }
 }

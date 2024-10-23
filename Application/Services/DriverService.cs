@@ -44,7 +44,7 @@ namespace Application.Services
                 Kilometers = requestDto.Car.Kilometers,
                 LicensePlate = requestDto.Car.LicensePlate,
                 Capacity = requestDto.Car.Capacity,
-                Driver = driver
+                //Driver = driver
             };
 
             _carRepository.Add(car);

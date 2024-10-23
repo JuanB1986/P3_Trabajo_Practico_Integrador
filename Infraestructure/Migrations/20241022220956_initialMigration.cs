@@ -58,8 +58,8 @@ namespace Infraestructure.Migrations
                     Kilometers = table.Column<int>(type: "INTEGER", nullable: false),
                     LicensePlate = table.Column<string>(type: "TEXT", nullable: false),
                     IsAvailable = table.Column<bool>(type: "INTEGER", nullable: false),
-                    DriverId = table.Column<int>(type: "INTEGER", nullable: false),
-                    Capacity = table.Column<int>(type: "INTEGER", nullable: false)
+                    Capacity = table.Column<int>(type: "INTEGER", nullable: false),
+                    DriverId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -68,8 +68,7 @@ namespace Infraestructure.Migrations
                         name: "FK_Cars_Drivers_DriverId",
                         column: x => x.DriverId,
                         principalTable: "Drivers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
