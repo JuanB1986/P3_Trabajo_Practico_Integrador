@@ -15,6 +15,5 @@ namespace Application.Models.Request
 
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
         public decimal Price { get; set; }
-        public int DriverId { get; set; }
     }
 }

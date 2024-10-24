@@ -37,25 +37,31 @@ namespace Application.Services
         // READ
         public IEnumerable<PassengerDto> GetAllPassengers()
         {
-            var list = _passengerRepository.GetAllPassengers();
-            return PassengerDto.CreateList(list);
+            var passengerList = _passengerRepository.GetAllPassengers();
+            return PassengerDto.CreateList(passengerList);
         }
 
-        public PassengerDto GetPassengerById(int Id)
+        public PassengerDto GetPassengerById(int id)
         {
-            var passenger = _passengerRepository.GetPassengerById(Id);
+            var passenger = _passengerRepository.GetPassengerById(id);
+
             if (passenger == null)
             {
-                throw new KeyNotFoundException($"No passenger was found with ID {Id}");
+                return null;
             }
 
             return PassengerDto.CreatePassenger(passenger);
         }
 
         // UPDATE
-        public bool Update(int Id, PassengerUpdateDto requestDto)
+        public bool Update(int id, PassengerUpdateDto requestDto)
         {
-            var passenger = _passengerRepository.GetById(Id);
+            var passenger = _passengerRepository.GetPassengerById(id);
+
+            if (passenger == null)
+            {
+                return false;
+            }
 
             passenger.Name = requestDto.Name;
             passenger.LastName = requestDto.LastName;
@@ -68,10 +74,14 @@ namespace Application.Services
         }
 
         // DELETE
-        public bool Delete(int Id)
+        public bool Delete(int id)
         {
-            var passenger = _passengerRepository.GetById(Id);
+            var passenger = _passengerRepository.GetPassengerById(id);
 
+            if (passenger == null)
+            {
+                return false;
+            }
             return _passengerRepository.Delete(passenger);
         }
     }

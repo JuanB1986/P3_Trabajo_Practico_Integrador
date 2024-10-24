@@ -59,24 +59,31 @@ namespace Application.Services
         // READ
         public IEnumerable<DriverDto> GetAllDrivers()
         {
-            var list = _driverRepository.GetAllDrivers();
-            return list.Select(driver => DriverDto.CreateDriver(driver)).ToList();
+            var driverList = _driverRepository.GetAllDrivers();
+            return DriverDto.CreateList(driverList);
         }
 
-        public DriverDto? GetDriverById(int Id)
+        public DriverDto GetDriverById(int id)
         {
-            var driver = _driverRepository.GetDriverById(Id);
+            var driver = _driverRepository.GetDriverById(id);
+
             if (driver == null)
             {
-                throw new KeyNotFoundException($"No driver was found with ID {Id}");
+                return null;
             }
+
             return DriverDto.CreateDriver(driver);
         }
 
         // UPDATE
-        public bool Update(int Id, DriverUpdateDto requestDto)
+        public bool Update(int id, DriverUpdateDto requestDto)
         {
-            var driver = _driverRepository.GetById(Id);
+            var driver = _driverRepository.GetDriverById(id);
+
+            if (driver == null)
+            {
+                return false; 
+            }
 
             driver.Name = requestDto.Name;
             driver.LastName = requestDto.LastName;
@@ -85,14 +92,18 @@ namespace Application.Services
             driver.Email = requestDto.Email;
             driver.Password = requestDto.Password;
 
-            return _driverRepository.Update(driver);
+            return _driverRepository.Update(driver); 
         }
 
         // DELETE
-        public bool Delete(int Id)
+        public bool Delete(int id)
         {
-            var driver = _driverRepository.GetById(Id);
+            var driver = _driverRepository.GetDriverById(id);
 
+            if (driver == null)
+            {
+                return false;
+            }
             return _driverRepository.Delete(driver);
         }
     }

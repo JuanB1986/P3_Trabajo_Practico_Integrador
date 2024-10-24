@@ -11,9 +11,7 @@ namespace Application.Models.Request
     public class TravelCreateRequest
     {
         public string StartDirection { get; set; } = string.Empty;
-
         public string EndDirection { get; set; } = string.Empty;
-
         public DateTime StartTime { get; set; }
 
         [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]

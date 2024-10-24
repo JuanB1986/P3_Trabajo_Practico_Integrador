@@ -1,5 +1,31 @@
 [
   {
+    "ContainingType": "TPI_Viajes_Compartidos.Controllers.AuthenticationController",
+    "Method": "Autenticar",
+    "RelativePath": "api/authentication/authenticate",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "authenticationRequest",
+        "Type": "Application.Models.Request.AuthenticationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.CarController",
     "Method": "CreateCar",
     "RelativePath": "api/Car",
@@ -9,7 +35,7 @@
     "Parameters": [
       {
         "Name": "requestDto",
-        "Type": "Application.Models.CarCreateDto",
+        "Type": "Application.Models.Request.CarCreateRequest",
         "IsRequired": true
       }
     ],
@@ -28,13 +54,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.CarController",
     "Method": "GetCarById",
-    "RelativePath": "api/Car/{Id}",
+    "RelativePath": "api/Car/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -44,19 +70,19 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.CarController",
     "Method": "Update",
-    "RelativePath": "api/Car/{Id}",
+    "RelativePath": "api/Car/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
         "Name": "requestDto",
-        "Type": "Application.Models.CarUpdateDto",
+        "Type": "Application.Models.Request.CarUpdateDto",
         "IsRequired": true
       }
     ],
@@ -65,13 +91,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.CarController",
     "Method": "Delete",
-    "RelativePath": "api/Car/{Id}",
+    "RelativePath": "api/Car/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -88,7 +114,7 @@
     "Parameters": [
       {
         "Name": "requestDto",
-        "Type": "Application.Models.DriverCreateDto",
+        "Type": "Application.Models.Request.DriverCreateRequest",
         "IsRequired": true
       }
     ],
@@ -107,13 +133,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.DriverController",
     "Method": "GetDriverById",
-    "RelativePath": "api/Driver/{Id}",
+    "RelativePath": "api/Driver/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -123,19 +149,19 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.DriverController",
     "Method": "Update",
-    "RelativePath": "api/Driver/{Id}",
+    "RelativePath": "api/Driver/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
         "Name": "requestDto",
-        "Type": "Application.Models.DriverUpdateDto",
+        "Type": "Application.Models.Request.DriverUpdateDto",
         "IsRequired": true
       }
     ],
@@ -144,29 +170,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.DriverController",
     "Method": "Delete",
-    "RelativePath": "api/Driver/{Id}",
+    "RelativePath": "api/Driver/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "TPI_Viajes_Compartidos.Controllers.DriverController",
-    "Method": "GetDriverWithCars",
-    "RelativePath": "api/Driver/with-cars/{Id}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -183,7 +193,7 @@
     "Parameters": [
       {
         "Name": "requestDto",
-        "Type": "Application.Models.PassengerCreateDto",
+        "Type": "Application.Models.Request.PassengerCreateDto",
         "IsRequired": true
       }
     ],
@@ -202,13 +212,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.PassengerController",
     "Method": "GetPassengerById",
-    "RelativePath": "api/Passenger/{Id}",
+    "RelativePath": "api/Passenger/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -218,19 +228,19 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.PassengerController",
     "Method": "Update",
-    "RelativePath": "api/Passenger/{Id}",
+    "RelativePath": "api/Passenger/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
         "Name": "requestDto",
-        "Type": "Application.Models.PassengerUpdateDto",
+        "Type": "Application.Models.Request.PassengerUpdateDto",
         "IsRequired": true
       }
     ],
@@ -239,13 +249,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.PassengerController",
     "Method": "Delete",
-    "RelativePath": "api/Passenger/{Id}",
+    "RelativePath": "api/Passenger/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -262,7 +272,7 @@
     "Parameters": [
       {
         "Name": "requestDto",
-        "Type": "Application.Models.TravelCreateDto",
+        "Type": "Application.Models.Request.TravelCreateRequest",
         "IsRequired": true
       }
     ],
@@ -281,13 +291,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.TravelController",
     "Method": "GetTravelById",
-    "RelativePath": "api/Travel/{Id}",
+    "RelativePath": "api/Travel/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -297,19 +307,19 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.TravelController",
     "Method": "Update",
-    "RelativePath": "api/Travel/{Id}",
+    "RelativePath": "api/Travel/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       },
       {
         "Name": "requestDto",
-        "Type": "Application.Models.TravelUpdateDto",
+        "Type": "Application.Models.Request.TravelUpdateDto",
         "IsRequired": true
       }
     ],
@@ -318,13 +328,13 @@
   {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.TravelController",
     "Method": "Delete",
-    "RelativePath": "api/Travel/{Id}",
+    "RelativePath": "api/Travel/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "Id",
+        "Name": "id",
         "Type": "System.Int32",
         "IsRequired": true
       }

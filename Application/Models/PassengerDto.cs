@@ -38,12 +38,7 @@ namespace Application.Models
 
         public static IEnumerable<PassengerDto> CreateList(IEnumerable<Passenger> passengers)
         {
-            List<PassengerDto> listDto = new List<PassengerDto>();
-            foreach (var passenger in passengers)
-            {
-                listDto.Add(CreatePassenger(passenger));
-            }
-            return listDto;
+            return passengers.Select(passenger => CreatePassenger(passenger)).ToList();
         }
     }
 }

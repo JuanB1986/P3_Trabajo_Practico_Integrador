@@ -25,6 +25,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult CreateDriver([FromBody] DriverCreateRequest requestDto)
         {
             var driver = _driverService.Add(requestDto);
@@ -39,48 +40,45 @@ namespace TPI_Viajes_Compartidos.Controllers
             return Ok(drivers);
         }
 
-        [HttpGet("{Id}")]
-        public IActionResult GetDriverById(int Id)
+        [HttpGet("{id}")]
+        public IActionResult GetDriverById([FromRoute] int id)
         {
-            try
+            var driver = _driverService.GetDriverById(id);
+
+            if (driver == null)
             {
-                var driver = _driverService.GetDriverById(Id);
-                return Ok(driver);
+                return NotFound(new { Message = $"Driver with ID {id} not found." });
             }
-            catch (KeyNotFoundException ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
+
+            return Ok(driver);
         }
 
         // UPDATE
-        [HttpPut("{Id}")]
-        public IActionResult Update(int Id, [FromBody] DriverUpdateDto requestDto)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] DriverUpdateDto requestDto)
         {
-            try
+            var isUpdated = _driverService.Update(id, requestDto);
+
+            if (!isUpdated)
             {
-                var result = _driverService.Update(Id, requestDto);
-                return Ok(new { Message = "Driver updated successfully." });
+                return NotFound(new { Message = $"Driver with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Driver updated successfully." });
         }
 
         // DELETE
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(int Id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
+            var isDeleted = _driverService.Delete(id);
+
+            if (!isDeleted)
             {
-                var result = _driverService.Delete(Id);
-                return Ok(new { Message = "Driver deleted successfully." });
+                return NotFound(new { Message = $"Driver with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Driver deleted successfully." });
         }
     }
 }

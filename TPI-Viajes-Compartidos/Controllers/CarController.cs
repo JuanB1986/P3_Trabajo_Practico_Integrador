@@ -1,16 +1,17 @@
 ﻿using Application.Interfaces;
-using Application.Models;
 using Application.Models.Request;
 using Application.Services;
 using Domain.Entities;
 using Domain.Interfaces;
 using Infraestructure.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = "Driver")]
     [ApiController]
     public class CarController : ControllerBase
     {
@@ -37,48 +38,46 @@ namespace TPI_Viajes_Compartidos.Controllers
             return Ok(car);
         }
 
-        [HttpGet("{Id}")]
-        public IActionResult GetCarById(int Id)
+        [HttpGet("{id}")]
+        public IActionResult GetCarById([FromRoute] int id)
         {
-            try
+            var car = _carService.GetCarById(id);
+
+            if (car == null)
             {
-                var car = _carService.GetById(Id);
-                return Ok(car);
+                return NotFound(new { Message = $"Car with ID {id} not found." });
             }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
+
+            return Ok(car);
         }
 
         // UPDATE
-        [HttpPut("{Id}")]
-        public IActionResult Update(int Id, [FromBody] CarUpdateDto requestDto)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] CarUpdateDto requestDto)
         {
-            try
+            var isUpdated = _carService.Update(id, requestDto);
+
+            if (!isUpdated)
             {
-                var result = _carService.Update(Id, requestDto);
-                return Ok(new { Message = "Car updated successfully." });
+                return NotFound(new { Message = $"Car with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Car updated successfully." });
         }
 
         // DELETE
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(int Id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
+            var isDeleted = _carService.Delete(id);
+
+            if (!isDeleted)
             {
-                var result = _carService.Delete(Id);
-                return Ok(new { Message = "Car deleted successfully." });
+                return NotFound(new { Message = $"Car with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Car deleted successfully." });
         }
     }
+    
 }

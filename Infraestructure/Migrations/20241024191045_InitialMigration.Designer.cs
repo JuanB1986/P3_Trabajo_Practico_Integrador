@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infraestructure.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20241022220956_initialMigration")]
-    partial class initialMigration
+    [Migration("20241024191045_InitialMigration")]
+    partial class InitialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -132,7 +132,7 @@ namespace Infraestructure.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("DriverId")
+                    b.Property<int?>("DriverId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("EndDirection")
@@ -184,10 +184,8 @@ namespace Infraestructure.Migrations
             modelBuilder.Entity("Domain.Entities.Travel", b =>
                 {
                     b.HasOne("Domain.Entities.Driver", "Driver")
-                        .WithMany("Travel")
-                        .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany("Travels")
+                        .HasForeignKey("DriverId");
 
                     b.Navigation("Driver");
                 });
@@ -211,7 +209,7 @@ namespace Infraestructure.Migrations
                 {
                     b.Navigation("Cars");
 
-                    b.Navigation("Travel");
+                    b.Navigation("Travels");
                 });
 #pragma warning restore 612, 618
         }

@@ -13,8 +13,8 @@ namespace Application.Interfaces
     {
         int Add(TravelCreateRequest requestdto);
         IEnumerable<TravelDto> GetAllTravels();
-        Travel GetById(int Id);
-        bool Update(int Id, TravelUpdateDto requestDto);
-        bool Delete(int Id);
+        TravelDto GetTravelById(int id);
+        bool Update(int id, TravelUpdateDto requestDto);
+        bool Delete(int id);
     }
 }

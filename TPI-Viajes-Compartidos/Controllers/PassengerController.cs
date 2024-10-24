@@ -25,6 +25,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         // CREATE
         [HttpPost]
+        [AllowAnonymous]
         public IActionResult CreatePassenger([FromBody] PassengerCreateDto requestDto)
         {
             var passenger = _passengerService.Add(requestDto);
@@ -40,42 +41,44 @@ namespace TPI_Viajes_Compartidos.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetPassengerById([FromRoute] int Id)
+        public IActionResult GetPassengerById([FromRoute] int id)
         {
-            var passenger = _passengerService.GetPassengerById(Id);
+            var passenger = _passengerService.GetPassengerById(id);
+
+            if (passenger == null)
+            {
+                return NotFound(new { Message = $"Passenger with ID {id} not found." });
+            }
+
             return Ok(passenger);
         }
 
-
-
         // UPDATE
-        [HttpPut("{Id}")]
-        public IActionResult Update(int Id, [FromBody] PassengerUpdateDto requestDto)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] PassengerUpdateDto requestDto)
         {
-            try
+            var isUpdated = _passengerService.Update(id, requestDto);
+
+            if (!isUpdated)
             {
-                var result = _passengerService.Update(Id, requestDto);
-                return Ok(new { Message = "Passenger updated successfully." });
+                return NotFound(new { Message = $"Passenger with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Passenger updated successfully." });
         }
 
         // DELETE
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(int Id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
+            var isDeleted = _passengerService.Delete(id);
+
+            if (!isDeleted)
             {
-                var result = _passengerService.Delete(Id);
-                return Ok(new { Message = "Passenger deleted successfully." });
+                return NotFound(new { Message = $"Passenger with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Passenger deleted successfully." });
         }
     }
 }

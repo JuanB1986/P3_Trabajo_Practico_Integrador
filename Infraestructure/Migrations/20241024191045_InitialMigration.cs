@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Infraestructure.Migrations
 {
     /// <inheritdoc />
-    public partial class initialMigration : Migration
+    public partial class InitialMigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -81,7 +81,7 @@ namespace Infraestructure.Migrations
                     EndDirection = table.Column<string>(type: "TEXT", nullable: false),
                     StartTime = table.Column<DateTime>(type: "TEXT", nullable: false),
                     Price = table.Column<decimal>(type: "TEXT", nullable: false),
-                    DriverId = table.Column<int>(type: "INTEGER", nullable: false),
+                    DriverId = table.Column<int>(type: "INTEGER", nullable: true),
                     Status = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
@@ -91,8 +91,7 @@ namespace Infraestructure.Migrations
                         name: "FK_Travels_Drivers_DriverId",
                         column: x => x.DriverId,
                         principalTable: "Drivers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(

@@ -10,17 +10,17 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using System.Text;
-
-
-
-
+using TPI_Viajes_Compartidos.Middleware;
 using static Infraestructure.Services.AuthenticationService;
 using AuthenticationService = Infraestructure.Services.AuthenticationService;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
+#region Services
 builder.Services.AddControllers();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddCors(options =>
 {
@@ -33,10 +33,30 @@ builder.Services.AddCors(options =>
         });
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+// Repositories
+builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
+builder.Services.AddScoped<IDriverRepository, DriverRepository>();
+builder.Services.AddScoped<ICarRepository, CarRepository>();
+builder.Services.AddScoped<ITravelRepository, TravelRepository>();
 
-//builder.Services.AddSwaggerGen();
+// Services
+builder.Services.Configure<AutenticacionServiceOptions>(
+builder.Configuration.GetSection(AutenticacionServiceOptions.AutenticacionService));
+builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IPassengerService, PassengerService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<ICarService, CarService>();
+builder.Services.AddScoped<ITravelService, TravelService>();
+
+// Conexión DB
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("DBConnectionString"),
+    b => b.MigrationsAssembly("Infraestructure")));
+#endregion
+
+#region SwaggerAction
+// builder.Services.AddSwaggerGen();
 builder.Services.AddSwaggerGen(setupAction =>
 {
     setupAction.AddSecurityDefinition("ConsultaAlumnosApiBearerAuth", new OpenApiSecurityScheme() //Esto va a permitir usar swagger con el token.
@@ -63,31 +83,9 @@ builder.Services.AddSwaggerGen(setupAction =>
     //setupAction.IncludeXmlComments(xmlPath);
 
 });
+#endregion
 
-
-//Repositories
-builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
-builder.Services.AddScoped<IDriverRepository, DriverRepository>();
-builder.Services.AddScoped<ICarRepository, CarRepository>();
-builder.Services.AddScoped<ITravelRepository, TravelRepository>();
-
-//Services
-builder.Services.Configure<AutenticacionServiceOptions>(
-    builder.Configuration.GetSection(AutenticacionServiceOptions.AutenticacionService));
-builder.Services.AddScoped<ICustomAuthenticationService, AuthenticationService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IPassengerService, PassengerService>();
-builder.Services.AddScoped<IDriverService, DriverService>();
-builder.Services.AddScoped<ICarService, CarService>();
-builder.Services.AddScoped<ITravelService, TravelService>();
-
-
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(builder.Configuration["ConnectionStrings:DBConnectionString"],
-    b => b.MigrationsAssembly("Infraestructure")));
-
-
-
+#region Authentication
 builder.Services.AddAuthentication("Bearer") //"Bearer" es el tipo de auntenticación que tenemos que elegir después en PostMan para pasarle el token
     .AddJwtBearer(options => //Acá definimos la configuración de la autenticación. le decimos qué cosas queremos comprobar. La fecha de expiración se valida por defecto.
     {
@@ -102,8 +100,7 @@ builder.Services.AddAuthentication("Bearer") //"Bearer" es el tipo de auntentica
         };
     }
 );
-
-
+#endregion
 
 var app = builder.Build();
 
@@ -114,11 +111,11 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-
+// Configura el manejo global de excepciones
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
 
-// Use CORS
 app.UseCors("AllowAllOrigins");
 
 app.UseAuthentication();

@@ -10,7 +10,7 @@ namespace Domain.Interfaces
     public interface IPassengerRepository : IBaseRepository<Passenger> 
     {
         IEnumerable<Passenger> GetAllPassengers();
-        Passenger? GetPassengerById(int Id);
+        Passenger? GetPassengerById(int id);
         Passenger? GetPassengerByName(string Name);
     }
 
