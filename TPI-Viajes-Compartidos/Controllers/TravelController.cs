@@ -6,10 +6,12 @@ using Domain.Entities;
 using Application.Interfaces;
 using Application.Services;
 using Application.Models.Request;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = "Driver")]
     [ApiController]
     public class TravelController : ControllerBase
     {
@@ -25,6 +27,11 @@ namespace TPI_Viajes_Compartidos.Controllers
         public IActionResult CreateTravel([FromBody] TravelCreateRequest requestDto)
         {
             var travel = _travelService.Add(requestDto);
+
+            if (travel == 0)
+            {
+                return NotFound(new { Message = $"Travel not found." });
+            }
             return Ok(travel);
         }
 
@@ -36,48 +43,44 @@ namespace TPI_Viajes_Compartidos.Controllers
             return Ok(travels);
         }
 
-        [HttpGet("{Id}")]
-        public IActionResult GetTravelById(int Id)
+        [HttpGet("{id}")]
+        public IActionResult GetTravelById([FromRoute] int id)
         {
-            try
+            var travel = _travelService.GetTravelById(id);
+
+            if (travel == null)
             {
-                var travel = _travelService.GetById(Id);
-                return Ok(travel);
+                return NotFound(new { Message = $"Travel with ID {id} not found." });
             }
-            catch (InvalidOperationException ex)
-            {
-                return NotFound(new { Message = ex.Message });
-            }
+            return Ok(travel);
         }
 
         // UPDATE
-        [HttpPut("{Id}")]
-        public IActionResult Update(int Id, [FromBody] TravelUpdateDto requestDto)
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, [FromBody] TravelUpdateDto requestDto)
         {
-            try
+            var isUpdated = _travelService.Update(id, requestDto);
+
+            if (!isUpdated)
             {
-                var result = _travelService.Update(Id, requestDto);
-                return Ok(new { Message = "Travel updated successfully." });
+                return NotFound(new { Message = $"Travel with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Travel updated successfully." });
         }
 
         // DELETE
-        [HttpDelete("{Id}")]
-        public IActionResult Delete(int Id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
         {
-            try
+            var isDeleted = _travelService.Delete(id);
+
+            if (!isDeleted)
             {
-                var result = _travelService.Delete(Id);
-                return Ok(new { Message = "Travel deleted successfully." });
+                return NotFound(new { Message = $"Travel with ID {id} not found." });
             }
-            catch (InvalidOperationException exception)
-            {
-                return NotFound(new { Message = exception.Message });
-            }
+
+            return Ok(new { Message = "Travel deleted successfully." });
         }
     }
 }

@@ -744,7 +744,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10"
         },
         "runtime": {
-          "Application.dll": {}
+          "Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Domain/1.0.0": {
@@ -752,7 +755,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10"
         },
         "runtime": {
-          "Domain.dll": {}
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

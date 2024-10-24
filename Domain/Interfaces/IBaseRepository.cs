@@ -9,8 +9,6 @@ namespace Domain.Interfaces
     public interface IBaseRepository<T> where T : class
     {
         int Add(T entity);
-        List<T> GetAll();
-        T GetById(int Id);
         bool Update(T entity);
         bool Delete(T entity);
     }

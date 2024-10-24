@@ -9,6 +9,7 @@ namespace Application.Models
 {
     public class CarDto
     {
+        public int Id { get; set; }
         public string Brand { get; set; } = string.Empty;
         public int Model { get; set; }
         public int Kilometers { get; set; }
@@ -19,6 +20,7 @@ namespace Application.Models
         {
             var newCar = new CarDto()
             {
+                Id = car.Id,
                 Brand = car.Brand,
                 Model = car.Model,
                 Kilometers = car.Kilometers,
@@ -26,6 +28,10 @@ namespace Application.Models
                 Capacity = car.Capacity,
             };
             return newCar;
+        }
+        public static IEnumerable<CarDto> CreateList(IEnumerable<Car> cars)
+        {
+            return cars.Select(car => CreateCar(car)).ToList();
         }
     }
 }

@@ -19,7 +19,6 @@ namespace Application.Services
         public CarService(ICarRepository carRepository)
         {
             _carRepository = carRepository;
-
         }
 
         // CREATE
@@ -40,20 +39,30 @@ namespace Application.Services
         // READ
         public IEnumerable<CarDto> GetAllCars()
         {
-            var list = _carRepository.GetAllCars();
-            return list.Select(car => CarDto.CreateCar(car)).ToList();
+            var carList = _carRepository.GetAllCars();
+            return CarDto.CreateList(carList);
         }
 
-        public Car GetById(int Id)
+        public CarDto GetCarById(int id)
         {
-            return _carRepository.GetById(Id);
+            var car = _carRepository.GetCarById(id);
+
+            if (car == null)
+            {
+                return null;
+            }
+            return CarDto.CreateCar(car);
         }
 
         // UPDATE
-        public bool Update(int Id, CarUpdateDto requestDto)
+        public bool Update(int id, CarUpdateDto requestDto)
         {
-            var car = _carRepository.GetById(Id);
+            var car = _carRepository.GetCarById(id);
 
+            if (car == null)
+            {
+                return false;
+            }
             car.Brand = requestDto.Brand;
             car.Model = requestDto.Model;
             car.Kilometers = requestDto.Kilometers;
@@ -64,10 +73,14 @@ namespace Application.Services
         }
 
         // DELETE
-        public bool Delete(int Id)
+        public bool Delete(int id)
         {
-            var car = _carRepository.GetById(Id);
+            var car = _carRepository.GetCarById(id);
 
+            if (car == null)
+            {
+                return false;
+            }
             return _carRepository.Delete(car);
         }
     }

@@ -9,10 +9,9 @@ namespace Domain.Interfaces
 {
     public interface IDriverRepository : IBaseRepository<Driver>
     {
-        Driver? GetDriverWithCars(int id);
-        Driver? GetDriverByName(string name);
         IEnumerable<Driver> GetAllDrivers();
-        Driver? GetDriverById(int Id);
+        Driver? GetDriverById(int id);
+        Driver? GetDriverByName(string name);
 
     }
 }

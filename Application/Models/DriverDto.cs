@@ -38,5 +38,9 @@ namespace Application.Models
             };
             return newDto;
         }
+        public static IEnumerable<DriverDto> CreateList(IEnumerable<Driver> drivers)
+        {
+            return drivers.Select(travel => CreateDriver(travel)).ToList();
+        }
     }
 }

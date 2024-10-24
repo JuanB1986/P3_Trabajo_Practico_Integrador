@@ -13,8 +13,8 @@ namespace Application.Interfaces
     {
         int Add(DriverCreateRequest driverDto);
         IEnumerable<DriverDto> GetAllDrivers();
-        DriverDto? GetDriverById(int Id);
-        bool Update(int Id, DriverUpdateDto requestDto);
-        bool Delete(int Id);
+        DriverDto? GetDriverById(int id);
+        bool Update(int id, DriverUpdateDto requestDto);
+        bool Delete(int id);
     }
 }

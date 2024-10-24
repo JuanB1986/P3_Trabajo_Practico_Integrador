@@ -6,6 +6,7 @@ using Domain.Enum;
 using Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,7 +24,6 @@ namespace Application.Services
             _driverRepository = driverRepository;
         }
 
-
         // CREATE
         public int Add(TravelCreateRequest requestDto)
         {
@@ -31,9 +31,9 @@ namespace Application.Services
 
             if (driver == null)
             {
-                throw new InvalidOperationException($"No se encontró un conductor con ID {requestDto.DriverId}");
+                return 0;
             }
-
+            
             var travel = new Travel
             {
                 StartDirection = requestDto.StartDirection,
@@ -50,19 +50,31 @@ namespace Application.Services
         // READ
         public IEnumerable<TravelDto> GetAllTravels()
         {
-            var list = _travelRepository.GetAllTravels();
-            return TravelDto.CreateList(list);
+            var travelList = _travelRepository.GetAllTravels();
+            return TravelDto.CreateList(travelList);
         }
 
-        public Travel GetById(int Id)
+        public TravelDto GetTravelById(int id)
         {
-            return _travelRepository.GetById(Id);
+            var travel = _travelRepository.GetTravelById(id);
+
+            if (travel == null)
+            {
+                return null;
+            }
+
+            return TravelDto.CreateTravel(travel);
         }
 
         // UPDATE
-        public bool Update(int Id, TravelUpdateDto requestDto)
+        public bool Update(int id, TravelUpdateDto requestDto)
         {
-            var travel = _travelRepository.GetById(Id);
+            var travel = _travelRepository.GetTravelById(id);
+
+            if (travel == null)
+            {
+                return false;
+            }
 
             travel.StartDirection = requestDto.StartDirection;
             travel.EndDirection = requestDto.EndDirection;
@@ -73,12 +85,15 @@ namespace Application.Services
         }
 
         // DELETE
-        public bool Delete(int Id)
+        public bool Delete(int id)
         {
-            var travel = _travelRepository.GetById(Id);
+            var travel = _travelRepository.GetTravelById(id);
 
+            if (travel == null)
+            {
+                return false;
+            }
             return _travelRepository.Delete(travel);
         }
     }
-
 }

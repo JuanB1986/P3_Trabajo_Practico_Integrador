@@ -1,6 +1,7 @@
 ﻿using Domain.Entities;
 using Domain.Interfaces;
 using Infraestructure.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,13 @@ namespace Infraestructure.Repositories
         }
         public IEnumerable<Car> GetAllCars()
         {
-            var list = _context.Cars.ToList();
-            return list;
+            var carList = _context.Cars.ToList();
+            return carList;
+        }
+        public Car? GetCarById(int id)
+        {
+            var car = _context.Cars.FirstOrDefault(car => car.Id == id);
+            return car;
         }
     }
 }

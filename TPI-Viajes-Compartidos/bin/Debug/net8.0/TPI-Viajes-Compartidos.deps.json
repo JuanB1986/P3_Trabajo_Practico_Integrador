@@ -784,7 +784,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10"
         },
         "runtime": {
-          "Application.dll": {}
+          "Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Domain/1.0.0": {
@@ -792,7 +795,10 @@
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.10"
         },
         "runtime": {
-          "Domain.dll": {}
+          "Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Infraestructure/1.0.0": {
@@ -804,7 +810,10 @@
           "System.IdentityModel.Tokens.Jwt": "8.1.2"
         },
         "runtime": {
-          "Infraestructure.dll": {}
+          "Infraestructure.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

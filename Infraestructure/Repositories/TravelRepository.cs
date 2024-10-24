@@ -17,11 +17,18 @@ namespace Infraestructure.Repositories
         }
         public IEnumerable<Travel> GetAllTravels()
         {
-            var list = _context.Travels
-                                   .Include(driver => driver.Driver)
-                                   .Include(passenger => passenger.Passengers)
-                                   .ToList();
-            return list;
+            var travelList = _context.Travels
+                                    .Include(travel => travel.Driver)
+                                    .Include(travel => travel.Passengers)
+                                    .ToList();
+            return travelList;
+        }
+        public Travel? GetTravelById(int id)
+        {
+            var travel = _context.Travels
+                                    .Include(travel => travel.Driver)
+                                    .FirstOrDefault(travel => travel.Id == id);
+            return travel;
         }
     }
 }

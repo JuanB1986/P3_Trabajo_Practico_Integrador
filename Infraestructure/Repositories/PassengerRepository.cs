@@ -17,23 +17,22 @@ namespace Infraestructure.Repositories
         }
         public IEnumerable<Passenger> GetAllPassengers()
         {
-            var list = _context.Passengers
-                                      .Include(travel => travel.Reservations)
-                                      .ToList();
-            return list;
+            var passengerList = _context.Passengers
+                                    .Include(passenger => passenger.Reservations)
+                                    .ToList();
+            return passengerList;
         }
-        public Passenger? GetPassengerById(int Id)
+        public Passenger? GetPassengerById(int id)
         {
-            return _context.Passengers
-                                  .Include(travel => travel.Reservations)
-                                  .FirstOrDefault(travel => travel.Id == Id);
+            var passenger = _context.Passengers
+                                    .Include(passenger => passenger.Reservations)
+                                    .FirstOrDefault(passenger => passenger.Id == id);
+            return passenger;
         }
-
         public Passenger? GetPassengerByName(string name)
         {
             return _context.Passengers
-                .FirstOrDefault(passenger => passenger.Name == name);
+                                    .FirstOrDefault(passenger => passenger.Name == name);
         }
-
     }
 }

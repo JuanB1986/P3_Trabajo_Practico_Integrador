@@ -13,8 +13,8 @@ namespace Application.Interfaces
     {
         int Add(CarCreateRequest requestdto);
         IEnumerable<CarDto> GetAllCars();
-        Car GetById(int Id);
-        bool Update(int Id, CarUpdateDto requestdto);
-        bool Delete(int Id);
+        CarDto GetCarById(int id);
+        bool Update(int id, CarUpdateDto requestdto);
+        bool Delete(int id);
     }
 }
