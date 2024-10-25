@@ -1,12 +1,71 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\tpi-viajes-compartidos\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\infraestructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\application\\models\\request\\driverfortravelresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\models\\request\\driverfortravelresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\TPI-Viajes-Compartidos\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "TPI-Viajes-Compartidos\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAYwBsAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T13:28:53.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DriverForTravelResponse.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Application\\Models\\Request\\DriverForTravelResponse.cs",
+              "RelativeDocumentMoniker": "Application\\Models\\Request\\DriverForTravelResponse.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Application\\Models\\Request\\DriverForTravelResponse.cs",
+              "RelativeToolTip": "Application\\Models\\Request\\DriverForTravelResponse.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T13:21:59.041Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Infraestructure\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Infraestructure\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\Infraestructure\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Infraestructure\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAABEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T13:00:10.444Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
