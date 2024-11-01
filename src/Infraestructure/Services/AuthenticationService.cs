@@ -28,11 +28,11 @@ namespace Infraestructure.Services
 
         private User? ValidateUser(AuthenticationRequest authenticationRequest)
         {
-            if (string.IsNullOrEmpty(authenticationRequest.Email) || string.IsNullOrEmpty(authenticationRequest.Password))
+            if (string.IsNullOrEmpty(authenticationRequest.Name) || string.IsNullOrEmpty(authenticationRequest.Password))
                 return null;
 
-            var driver = _driverRepository.GetDriverByEmail(authenticationRequest.Email);
-            var passenger = _passengerRepository.GetPassengerByEmail(authenticationRequest.Email);
+            var driver = _driverRepository.GetDriverByName(authenticationRequest.Name);
+            var passenger = _passengerRepository.GetPassengerByName(authenticationRequest.Name);
 
             claimsForToken = new List<Claim>();
 

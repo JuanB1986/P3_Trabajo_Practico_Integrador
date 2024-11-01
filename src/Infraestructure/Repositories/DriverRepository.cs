@@ -30,11 +30,11 @@ namespace Infraestructure.Repositories
                                 .Include(driver => driver.Travels)
                                 .FirstOrDefault(driver => driver.Id == id);
         }
-        public Driver? GetDriverByEmail(string email)
+        public Driver? GetDriverByName(string name)
         {
             return _context.Drivers
                                 .Include(driver => driver.Cars)
-                                .FirstOrDefault (driver => driver.Email == email);
+                                .FirstOrDefault (driver => driver.Name == name);
         }
     }
 }

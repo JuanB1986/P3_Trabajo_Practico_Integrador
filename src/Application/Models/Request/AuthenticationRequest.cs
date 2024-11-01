@@ -10,8 +10,7 @@ namespace Application.Models.Request
     public class AuthenticationRequest
     {
         [Required]
-        [EmailAddress]
-        public string? Email { get; set; }
+        public string? Name { get; set; }
         [Required]
         public string? Password { get; set; }
     }

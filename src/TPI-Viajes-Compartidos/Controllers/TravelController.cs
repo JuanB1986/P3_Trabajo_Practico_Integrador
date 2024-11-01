@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize(Roles = "Driver")]
     [ApiController]
     public class TravelController : ControllerBase
     {
@@ -20,9 +21,8 @@ namespace TPI_Viajes_Compartidos.Controllers
             _travelService = travelService;
         }
 
-        #region CREATE
+        
         [HttpPost]
-        [Authorize(Roles = "Driver")]
         public IActionResult CreateTravel([FromBody] TravelCreateRequest requestDto)
         {
             var travel = _travelService.Add(requestDto);
@@ -33,9 +33,9 @@ namespace TPI_Viajes_Compartidos.Controllers
             }
             return Ok(travel);
         }
-        #endregion
+        
 
-        #region READ
+        
         [HttpGet]
         public IActionResult GetTravels()
         {
@@ -54,11 +54,10 @@ namespace TPI_Viajes_Compartidos.Controllers
             }
             return Ok(travel);
         }
-        #endregion
+        
 
-        #region UPDATE
+        
         [HttpPut("{id}")]
-        [Authorize(Roles = "Driver")]
         public IActionResult Update(int id, [FromBody] TravelUpdateDto requestDto)
         {
             var isUpdated = _travelService.Update(id, requestDto);
@@ -70,11 +69,10 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Travel updated successfully." });
         }
-        #endregion
+        
 
-        #region DELETE
+       
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Driver")]
         public IActionResult Delete(int id)
         {
             var isDeleted = _travelService.Delete(id);
@@ -86,7 +84,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Travel deleted successfully." });
         }
-        #endregion
+        
     }
 }
 
