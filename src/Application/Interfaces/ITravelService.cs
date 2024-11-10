@@ -16,5 +16,6 @@ namespace Application.Interfaces
         TravelDto? GetTravelById(int id);
         bool Update(int id, TravelUpdateDto requestDto);
         bool Delete(int id);
+        IEnumerable<TravelDto> GetAllTravelsAvailable(int? passengerId);
     }
 }

@@ -87,5 +87,77 @@ namespace Application.Services
             }
             return _passengerRepository.Delete(passenger);
         }
+
+        // RESERVATION
+        public bool AddReservation(int passengerId, int travelId)
+        {
+            var passenger = _passengerRepository.GetPassengerById(passengerId);
+            var travel = _travelRepository.GetTravelById(travelId);
+
+            // Verifica si el pasajero y el viaje existen, y si el viaje está en estado 'Pending'
+            if (passenger == null || travel == null || travel.Status != TravelStatus.Pending)
+            {
+                return false;
+            }
+
+            // Obtiene el primer auto disponible del conductor.
+            var availableCar = travel.Driver!.Cars.FirstOrDefault(c => c.IsAvailable);
+
+            // Verifica si hay un auto disponible
+            if (availableCar == null)
+            {
+                return false; 
+            }
+
+            int pasajeros = travel.Passengers.Count;
+            int capacidad = availableCar.Capacity;
+
+            // Verifica si el viaje está lleno
+            if (pasajeros >= capacidad)
+            {
+                return false; 
+            }
+
+            // Agrega el viaje a las reservas del pasajero
+            passenger.Reservations.Add(travel);
+
+            // Verifica si el pasajero ya está asignado al viaje
+            if (!travel.Passengers.Any(p => p.Id == passengerId))
+            {
+                travel.Passengers.Add(passenger);
+            }
+
+            _passengerRepository.Update(passenger);
+            _travelRepository.Update(travel);
+
+            return true;
+        }
+
+        // REMOVE RESERVATION
+        public bool CancelReservation(int passengerId, int travelId)
+        {
+            var passenger = _passengerRepository.GetPassengerById(passengerId);
+            var travel = _travelRepository.GetTravelById(travelId);
+
+            // Verifica si el pasajero y el viaje existen, y si el viaje está en estado 'Pending'
+            if (passenger == null || travel == null || travel.Status != TravelStatus.Pending)
+            {
+                return false;
+            }
+            // Verifica si el pasajero está en la lista de pasajeros del viaje
+            var existingPassenger = travel.Passengers.FirstOrDefault(p => p.Id == passengerId);
+            if (existingPassenger == null)
+            {
+                return false; 
+            }
+
+            passenger.Reservations.Remove(travel);
+            travel.Passengers.Remove(existingPassenger);
+
+            _passengerRepository.Update(passenger);
+            _travelRepository.Update(travel);
+
+            return true;
+        }
     }
 }

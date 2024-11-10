@@ -1,12 +1,69 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\application\\services\\travelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\services\\travelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\application\\interfaces\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ITravelService.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\ITravelService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITravelService.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\ITravelService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITravelService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T14:47:43.177Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TravelService.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\TravelService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\TravelService.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\TravelService.cs",
+              "RelativeToolTip": "Application\\Services\\TravelService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T14:41:22.722Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TravelController.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "ViewState": "AgIAACgAAAAAAAAAAAAYwC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-10T14:40:36.923Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

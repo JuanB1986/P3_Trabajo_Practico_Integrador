@@ -11,7 +11,7 @@ namespace Domain.Interfaces
     {
         IEnumerable<Passenger> GetAllPassengers();
         Passenger? GetPassengerById(int id);
-        Passenger? GetPassengerByName(string Name);
+        Passenger? GetPassengerByEmail(string email);
     }
 
 }

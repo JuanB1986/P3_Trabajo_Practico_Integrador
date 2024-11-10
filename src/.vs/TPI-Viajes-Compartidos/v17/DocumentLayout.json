@@ -1,74 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\",
+  "WorkspaceRootPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\application\\services\\driverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\services\\driverservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\domain\\entities\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\driver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\travelcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\passengercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\application\\services\\travelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\services\\travelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\drivercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\carcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\domain\\entities\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\passenger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\infraestructure\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\services\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\domain\\interfaces\\ipassengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\ipassengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\infraestructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\repositories\\passengerrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\infraestructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{65EA7FB3-C0C2-4E2B-B349-46419E33DA71}|Infraestructure\\Infraestructure.csproj|solutionrelative:infraestructure\\repositories\\driverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\domain\\interfaces\\idriverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|solutionrelative:domain\\interfaces\\idriverrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\application\\models\\request\\authenticationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\models\\request\\authenticationrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\tpi-viajes-compartidos\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF6BF65F-98B3-4D9A-A1B8-89CF3B931BA5}|TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj|solutionrelative:tpi-viajes-compartidos\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{916FB222-D642-41D3-A22F-E08C4AE73118}|Domain\\Domain.csproj|solutionrelative:domain\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\application\\services\\passengerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\services\\passengerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\jm\\desktop\\utn\\3er cuatrimestre\\programaci\u00F3n 3\\p3_trabajo_practico_integrador\\src\\application\\interfaces\\ipassengerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\interfaces\\ipassengerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|c:\\users\\casa\\documents\\tup\\tpi-viajescompartidos\\p3_trabajo_practico_integrador\\src\\application\\interfaces\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D9163897-A5CB-4292-AC10-FA1AFD53C5B7}|Application\\Application.csproj|solutionrelative:application\\interfaces\\itravelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -78,227 +22,43 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "DriverService.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\DriverService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\DriverService.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\DriverService.cs",
-              "RelativeToolTip": "Application\\Services\\DriverService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAAQwCMAAAAlAAAA",
+              "DocumentIndex": 2,
+              "Title": "ITravelService.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\ITravelService.cs",
+              "RelativeDocumentMoniker": "Application\\Interfaces\\ITravelService.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\ITravelService.cs",
+              "RelativeToolTip": "Application\\Interfaces\\ITravelService.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T16:31:13.968Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:47:43.177Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Driver.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\Driver.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Driver.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\Driver.cs",
-              "RelativeToolTip": "Domain\\Entities\\Driver.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "TravelService.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\TravelService.cs",
+              "RelativeDocumentMoniker": "Application\\Services\\TravelService.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\TravelService.cs",
+              "RelativeToolTip": "Application\\Services\\TravelService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAYwEUAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T16:29:31.064Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-10T14:41:22.722Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "TravelController.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "DocumentMoniker": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
               "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
+              "ToolTip": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
               "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\TravelController.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAowEsAAAAAAAAA",
+              "ViewState": "AgIAACgAAAAAAAAAAAAYwC8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:52:31.949Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PassengerController.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
-              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
-              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\PassengerController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:51:42.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CarController.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\CarController.cs",
-              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\CarController.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\CarController.cs",
-              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\CarController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAA0AAAAEAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:50:26.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "IPassengerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Interfaces\\IPassengerRepository.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\IPassengerRepository.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Interfaces\\IPassengerRepository.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\IPassengerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:37:12.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "PassengerRepository.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Repositories\\PassengerRepository.cs",
-              "RelativeDocumentMoniker": "Infraestructure\\Repositories\\PassengerRepository.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Repositories\\PassengerRepository.cs",
-              "RelativeToolTip": "Infraestructure\\Repositories\\PassengerRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:36:48.27Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "DriverRepository.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Repositories\\DriverRepository.cs",
-              "RelativeDocumentMoniker": "Infraestructure\\Repositories\\DriverRepository.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Repositories\\DriverRepository.cs",
-              "RelativeToolTip": "Infraestructure\\Repositories\\DriverRepository.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAAwCQAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:35:44.3Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IDriverRepository.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Interfaces\\IDriverRepository.cs",
-              "RelativeDocumentMoniker": "Domain\\Interfaces\\IDriverRepository.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Interfaces\\IDriverRepository.cs",
-              "RelativeToolTip": "Domain\\Interfaces\\IDriverRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:34:32.22Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\User.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\User.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\User.cs",
-              "RelativeToolTip": "Domain\\Entities\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:29:21.855Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "DriverController.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\DriverController.cs",
-              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\DriverController.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\DriverController.cs",
-              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\DriverController.cs",
-              "ViewState": "AQIAADwAAAAAAAAAAAAowEgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:19:09.752Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Passenger.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\Passenger.cs",
-              "RelativeDocumentMoniker": "Domain\\Entities\\Passenger.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Entities\\Passenger.cs",
-              "RelativeToolTip": "Domain\\Entities\\Passenger.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:48:24.222Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthenticationService.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Services\\AuthenticationService.cs",
-              "RelativeDocumentMoniker": "Infraestructure\\Services\\AuthenticationService.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Services\\AuthenticationService.cs",
-              "RelativeToolTip": "Infraestructure\\Services\\AuthenticationService.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAIA/wCEAAAA6AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:49:52.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "AuthenticationController.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\AuthenticationController.cs",
-              "RelativeDocumentMoniker": "TPI-Viajes-Compartidos\\Controllers\\AuthenticationController.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\Controllers\\AuthenticationController.cs",
-              "RelativeToolTip": "TPI-Viajes-Compartidos\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T13:49:45.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "AuthenticationRequest.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Models\\Request\\AuthenticationRequest.cs",
-              "RelativeDocumentMoniker": "Application\\Models\\Request\\AuthenticationRequest.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Models\\Request\\AuthenticationRequest.cs",
-              "RelativeToolTip": "Application\\Models\\Request\\AuthenticationRequest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAkAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:14:48.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "PassengerService.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\PassengerService.cs",
-              "RelativeDocumentMoniker": "Application\\Services\\PassengerService.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Services\\PassengerService.cs",
-              "RelativeToolTip": "Application\\Services\\PassengerService.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAD4vw4AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:11:56.609Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "IPassengerService.cs",
-              "DocumentMoniker": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\IPassengerService.cs",
-              "RelativeDocumentMoniker": "Application\\Interfaces\\IPassengerService.cs",
-              "ToolTip": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programaci\u00F3n 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Interfaces\\IPassengerService.cs",
-              "RelativeToolTip": "Application\\Interfaces\\IPassengerService.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAowBEAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T14:16:14.352Z",
+              "WhenOpened": "2024-11-10T14:40:36.923Z",
               "EditorCaption": ""
             }
           ]

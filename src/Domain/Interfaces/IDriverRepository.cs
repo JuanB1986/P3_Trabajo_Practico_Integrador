@@ -11,7 +11,7 @@ namespace Domain.Interfaces
     {
         IEnumerable<Driver> GetAllDrivers();
         Driver? GetDriverById(int id);
-        Driver GetDriverByName(string name);
+        Driver? GetDriverByEmail(string email);
 
     }
 }

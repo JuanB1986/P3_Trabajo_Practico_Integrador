@@ -16,5 +16,6 @@ namespace Application.Interfaces
         DriverDto? GetDriverById(int id);
         bool Update(int id, DriverUpdateDto requestDto);
         bool Delete(int id);
+        IEnumerable<TravelDto> GetTravelsByDriverId(int driverId);
     }
 }

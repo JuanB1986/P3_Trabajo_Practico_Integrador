@@ -36,6 +36,7 @@ builder.Services.AddScoped<IPassengerRepository, PassengerRepository>();
 builder.Services.AddScoped<IDriverRepository, DriverRepository>();
 builder.Services.AddScoped<ICarRepository, CarRepository>();
 builder.Services.AddScoped<ITravelRepository, TravelRepository>();
+builder.Services.AddScoped<IAdminRepository, AdminRepository>();
 
 // Services
 builder.Services.Configure<AutenticacionServiceOptions>(
@@ -45,6 +46,7 @@ builder.Services.AddScoped<IPassengerService, PassengerService>();
 builder.Services.AddScoped<IDriverService, DriverService>();
 builder.Services.AddScoped<ICarService, CarService>();
 builder.Services.AddScoped<ITravelService, TravelService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
 
 // Conexión DB
 builder.Services.AddDbContext<ApplicationDbContext>(options =>

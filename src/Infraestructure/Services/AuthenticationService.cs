@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models.Request;
+using Application.Models.Response;
 using Domain.Entities;
 using Domain.Interfaces;
 using Microsoft.Extensions.Options;
@@ -15,12 +16,14 @@ namespace Infraestructure.Services
     {
         private readonly IDriverRepository _driverRepository;
         private readonly IPassengerRepository _passengerRepository;
+        private readonly IAdminRepository _adminRepository;
         private readonly AutenticacionServiceOptions _options;
 
-        public AuthenticationService(IPassengerRepository passengerRepository ,IDriverRepository driverRepository, IOptions<AutenticacionServiceOptions> options)
+        public AuthenticationService(IPassengerRepository passengerRepository ,IDriverRepository driverRepository,IAdminRepository adminRepository ,IOptions<AutenticacionServiceOptions> options)
         {
             _driverRepository = driverRepository;
             _passengerRepository = passengerRepository;
+            _adminRepository = adminRepository;
             _options = options.Value;
         }
 
@@ -28,11 +31,12 @@ namespace Infraestructure.Services
 
         private User? ValidateUser(AuthenticationRequest authenticationRequest)
         {
-            if (string.IsNullOrEmpty(authenticationRequest.Name) || string.IsNullOrEmpty(authenticationRequest.Password))
+            if (string.IsNullOrEmpty(authenticationRequest.Email) || string.IsNullOrEmpty(authenticationRequest.Password))
                 return null;
 
-            var driver = _driverRepository.GetDriverByName(authenticationRequest.Name);
-            var passenger = _passengerRepository.GetPassengerByName(authenticationRequest.Name);
+            var driver = _driverRepository.GetDriverByEmail(authenticationRequest.Email);
+            var passenger = _passengerRepository.GetPassengerByEmail(authenticationRequest.Email);
+            var admin = _adminRepository.GetAdminByEmail(authenticationRequest.Email);
 
             claimsForToken = new List<Claim>();
 
@@ -54,40 +58,54 @@ namespace Infraestructure.Services
                 }
             }
 
+            if (admin != null)
+                if (admin.Password == authenticationRequest.Password)
+                {
+                    claimsForToken.Add(new Claim(ClaimTypes.Role, "Admin"));
+                    return admin;
+                }
+
             return null;   
         }
 
-        public string? Autenticar(AuthenticationRequest authenticationRequest)
+        public AuthenticationResponse? Autenticar(AuthenticationRequest authenticationRequest)
         {
-            //Paso 1: Validamos las credenciales
-            var user = ValidateUser(authenticationRequest); 
+            // Paso 1: Validamos las credenciales
+            var user = ValidateUser(authenticationRequest);
 
             if (user == null)
             {
                 return null;
             }
 
-            //Paso 2: Crear el token
-            var securityPassword = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_options.SecretForKey)); //Traemos la SecretKey del Json.
+            // Paso 2: Crear el token
+            var securityPassword = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(_options.SecretForKey));
+            var credentials = new SigningCredentials(securityPassword, SecurityAlgorithms.HmacSha256);
 
-            var credentials = new Microsoft.IdentityModel.Tokens.SigningCredentials(securityPassword, SecurityAlgorithms.HmacSha256);
+            // CLAIMS            
+            claimsForToken.Add(new Claim("sub", user.Id.ToString()));
+            claimsForToken.Add(new Claim("given_name", user.Name));
 
-            //CLAIMS            
-            claimsForToken.Add(new Claim("sub", user.Id.ToString())); 
-            claimsForToken.Add(new Claim("given_name", user.Name)); 
+            var jwtSecurityToken = new JwtSecurityToken(
+                _options.Issuer,
+                _options.Audience,
+                claimsForToken,
+                DateTime.UtcNow,
+                DateTime.UtcNow.AddHours(1),
+                credentials
+            );
 
-            var jwtSecurityToken = new JwtSecurityToken( // Acá es donde se crea el token con toda la data que le pasamos antes.
-              _options.Issuer,
-              _options.Audience,
-              claimsForToken,
-              DateTime.UtcNow,
-              DateTime.UtcNow.AddHours(1),
-              credentials);
+            var tokenToReturn = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken);
 
-            var tokenToReturn = new JwtSecurityTokenHandler() //Pasamos el token a string
-                .WriteToken(jwtSecurityToken);
+            // Paso 3: Crear el objeto de respuesta
+            var response = new AuthenticationResponse
+            {
+                Token = tokenToReturn,
+                Id = user.Id,
+                Role = claimsForToken.FirstOrDefault(c => c.Type == ClaimTypes.Role)?.Value ?? ""
+            };
 
-            return tokenToReturn.ToString();
+            return response;
         }
 
         public class AutenticacionServiceOptions

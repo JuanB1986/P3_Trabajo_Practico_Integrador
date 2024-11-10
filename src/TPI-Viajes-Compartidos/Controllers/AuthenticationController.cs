@@ -1,5 +1,6 @@
 ﻿using Application.Interfaces;
 using Application.Models.Request;
+using Application.Models.Response;
 using Microsoft.AspNetCore.Mvc;
 
 namespace TPI_Viajes_Compartidos.Controllers
@@ -18,16 +19,17 @@ namespace TPI_Viajes_Compartidos.Controllers
         }
 
 
-        [HttpPost("authenticate")] 
-        public ActionResult<string> Autenticar(AuthenticationRequest authenticationRequest) 
+        [HttpPost("authenticate")] //Vamos a usar un POST ya que debemos enviar los datos para hacer el login
+        public ActionResult<AuthenticationResponse> Autenticar(AuthenticationRequest authenticationRequest) //Enviamos como parámetro la clase que creamos arriba
         {
-            string token = _customAuthenticationService.Autenticar(authenticationRequest)!; 
+            var authResponse = _customAuthenticationService.Autenticar(authenticationRequest); //Lo primero que hacemos es llamar a una función que valide los parámetros que enviamos.
 
-            if (token == null) { 
-                return Unauthorized();  //Tambien puedo devolver un 403: Forbiden
+            if (authResponse == null)
+            {
+                return Unauthorized(); //Tambien puedo devolver un 403: Forbiden
             }
 
-            return Ok(token);
+            return Ok(authResponse);
         }
     }
 }

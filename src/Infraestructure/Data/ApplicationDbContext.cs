@@ -14,6 +14,7 @@ namespace Infraestructure.Data
         public DbSet<Driver> Drivers { get; set; }
         public DbSet<Car> Cars { get; set; }
         public DbSet<Travel> Travels { get; set; }
+        public DbSet<Admin> Admins { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj": {}
+    "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
+    "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj",
+        "projectUniqueName": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj",
         "projectName": "Application",
-        "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj",
-        "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\obj\\",
+        "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj",
+        "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,8 +29,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj": {
-                "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj"
+              "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj": {
+                "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj"
               }
             }
           }
@@ -71,21 +71,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj": {
+    "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj",
-        "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Domain\\obj\\",
+        "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\Domain.csproj",
+        "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -138,21 +138,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj": {
+    "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj",
+        "projectUniqueName": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj",
         "projectName": "Infraestructure",
-        "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj",
-        "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\obj\\",
+        "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj",
+        "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -167,8 +167,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj"
+              "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj"
               }
             }
           }
@@ -233,21 +233,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj": {
+    "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj",
+        "projectUniqueName": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj",
         "projectName": "TPI-Viajes-Compartidos",
-        "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj",
-        "packagesPath": "C:\\Users\\JM\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\obj\\",
+        "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\TPI-Viajes-Compartidos.csproj",
+        "packagesPath": "C:\\Users\\Casa\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\TPI-Viajes-Compartidos\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Casa\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -262,11 +262,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
-                "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj"
+              "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj": {
+                "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Application\\Application.csproj"
               },
-              "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj": {
-                "projectPath": "C:\\Users\\JM\\Desktop\\UTN\\3er Cuatrimestre\\Programación 3\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj"
+              "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj": {
+                "projectPath": "C:\\Users\\Casa\\Documents\\TUP\\TPI-ViajesCompartidos\\P3_Trabajo_Practico_Integrador\\src\\Infraestructure\\Infraestructure.csproj"
               }
             }
           }
@@ -320,7 +320,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -62,6 +62,20 @@ namespace Application.Services
             return TravelDto.CreateList(travelList);
         }
 
+        public IEnumerable<TravelDto> GetAllTravelsAvailable(int? passengerId)
+        {
+            var travelList = _travelRepository.GetAllTravelsAvailable();
+
+            if (passengerId.HasValue)
+            {
+                travelList = travelList.Where(travel =>
+                    !travel.Passengers.Any(p => p.Id == passengerId.Value)).ToList();
+            }
+
+            return TravelDto.CreateList(travelList);
+        }
+
+
         public TravelDto? GetTravelById(int id)
         {
             var travel = _travelRepository.GetTravelById(id);

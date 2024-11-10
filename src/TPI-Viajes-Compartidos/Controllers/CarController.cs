@@ -21,16 +21,16 @@ namespace TPI_Viajes_Compartidos.Controllers
             _carService = carService;
         }
 
-        
+        #region CREATE
         [HttpPost]
         public IActionResult CreateCar([FromBody] CarCreateRequest requestDto)
         {
             var car = _carService.Add(requestDto);
             return Ok(car);
         }
-        
+        #endregion
 
-        
+        #region READ
         [HttpGet]
         public IActionResult GetCars()
         {
@@ -50,9 +50,9 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(car);
         }
-        
+        #endregion
 
-        
+        #region UPDATE
         [HttpPut("{id}")]
         public IActionResult Update(int id, [FromBody] CarUpdateDto requestDto)
         {
@@ -65,9 +65,9 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Car updated successfully." });
         }
-        
+        #endregion
 
-        
+        #region DELETE
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -80,7 +80,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Car deleted successfully." });
         }
-        
+        #endregion
     }
 
 }

@@ -16,5 +16,7 @@ namespace Application.Interfaces
         PassengerDto? GetPassengerById(int id);
         bool Update(int id, PassengerUpdateDto requestDto);
         bool Delete(int id);
+        bool AddReservation(int passengerId, int travelId);
+        bool CancelReservation(int passengerId, int travelId);
     }
 }

@@ -12,7 +12,6 @@ using System.ComponentModel.DataAnnotations;
 namespace TPI_Viajes_Compartidos.Controllers
 {
     [Route("api/[controller]")]
-    [Authorize(Roles = "Driver")]
     [ApiController]
     public class DriverController : ControllerBase
     {
@@ -22,16 +21,16 @@ namespace TPI_Viajes_Compartidos.Controllers
             _driverService = driverService;
         }
 
-        
-        [HttpPost]        
+        #region CREATE
+        [HttpPost]
         public IActionResult CreateDriver([FromBody] DriverCreateRequest requestDto)
         {
             var driver = _driverService.Add(requestDto);
             return Ok(driver);
         }
-        
+        #endregion
 
-        
+        #region READ
         [HttpGet]
         public IActionResult GetDrivers()
         {
@@ -51,10 +50,11 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(driver);
         }
-        
+        #endregion
 
-        
+        #region UPDATE
         [HttpPut("{id}")]
+        [Authorize(Roles = "Driver")]
         public IActionResult Update(int id, [FromBody] DriverUpdateDto requestDto)
         {
             var isUpdated = _driverService.Update(id, requestDto);
@@ -66,10 +66,11 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Driver updated successfully." });
         }
-        
+        #endregion
 
-        
+        #region DELETE
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Driver")]
         public IActionResult Delete(int id)
         {
             var isDeleted = _driverService.Delete(id);
@@ -81,6 +82,15 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(new { Message = "Driver deleted successfully." });
         }
-        
+        #endregion
+
+        [HttpGet("{id}/travels")]
+        public IActionResult GetTravelsByDriverId(int id)
+        {
+            var travels = _driverService.GetTravelsByDriverId(id);
+
+            return Ok(travels);
+        }
+
     }
 }

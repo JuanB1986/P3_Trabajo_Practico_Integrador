@@ -1,4 +1,5 @@
 ﻿using Application.Models.Request;
+using Application.Models.Response;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,6 @@ namespace Application.Interfaces
 {
     public interface ICustomAuthenticationService
     {
-        string? Autenticar(AuthenticationRequest authenticationRequest);
+        AuthenticationResponse? Autenticar(AuthenticationRequest authenticationRequest);
     }
 }

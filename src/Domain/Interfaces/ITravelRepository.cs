@@ -11,5 +11,6 @@ namespace Domain.Interfaces
     {
         IEnumerable<Travel> GetAllTravels();
         Travel? GetTravelById(int id);
+        IEnumerable<Travel> GetAllTravelsAvailable();
     }
 }

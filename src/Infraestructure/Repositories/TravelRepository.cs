@@ -24,6 +24,27 @@ namespace Infraestructure.Repositories
                                     .ToList();
             return travelList;
         }
+        public IEnumerable<Travel> GetAllTravelsAvailable()
+        {
+            var travelList = _context.Travels
+                                     .Include(travel => travel.Driver)
+                                     .ThenInclude(d => d!.Cars)
+                                     .Include(travel => travel.Passengers)
+                                     .ToList();
+
+            var availableTravels = travelList
+                .Where(travel =>
+                {
+                    int carCapacity = travel.Driver?.Cars.FirstOrDefault(c => c.IsAvailable)?.Capacity ?? 0;
+                    int occupiedSeats = travel.Passengers.Count;
+                    int availableSeats = carCapacity - occupiedSeats;
+
+                    return availableSeats > 0;
+                })
+                .ToList();
+
+            return availableTravels;
+        }
         public Travel? GetTravelById(int id)
         {
             var travel = _context.Travels

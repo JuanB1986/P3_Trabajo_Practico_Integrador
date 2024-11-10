@@ -26,15 +26,17 @@ namespace Infraestructure.Repositories
         public Driver? GetDriverById(int id)
         {
             return _context.Drivers
-                                .Include(driver => driver.Cars)
-                                .Include(driver => driver.Travels)
-                                .FirstOrDefault(driver => driver.Id == id);
+                           .Include(driver => driver.Cars)
+                           .Include(driver => driver.Travels)
+                               .ThenInclude(travel => travel.Passengers)
+                           .FirstOrDefault(driver => driver.Id == id);
         }
-        public Driver? GetDriverByName(string name)
+
+        public Driver? GetDriverByEmail(string email)
         {
             return _context.Drivers
                                 .Include(driver => driver.Cars)
-                                .FirstOrDefault (driver => driver.Name == name);
+                                .FirstOrDefault (driver => driver.Email == email);
         }
     }
 }

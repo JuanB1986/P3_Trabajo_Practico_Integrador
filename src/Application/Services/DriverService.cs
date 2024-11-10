@@ -106,5 +106,18 @@ namespace Application.Services
             }
             return _driverRepository.Delete(driver);
         }
+
+        public IEnumerable<TravelDto> GetTravelsByDriverId(int driverId)
+        {
+            var driver = _driverRepository.GetDriverById(driverId);
+
+            if (driver == null || driver.Travels == null || !driver.Travels.Any())
+            {
+                return Enumerable.Empty<TravelDto>();
+            }
+
+            return TravelDto.CreateList(driver.Travels);
+        }
+
     }
 }

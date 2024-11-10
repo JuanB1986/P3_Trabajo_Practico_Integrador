@@ -29,9 +29,9 @@ namespace Infraestructure.Repositories
                                     .FirstOrDefault(passenger => passenger.Id == id);
             return passenger;
         }
-        public Passenger? GetPassengerByName(string name)
+        public Passenger? GetPassengerByEmail(string email)
         {
-            return _context.Passengers.FirstOrDefault(passenger => passenger.Name == name);
+            return _context.Passengers.FirstOrDefault(passenger => passenger.Email == email);
         }
     }
 }
