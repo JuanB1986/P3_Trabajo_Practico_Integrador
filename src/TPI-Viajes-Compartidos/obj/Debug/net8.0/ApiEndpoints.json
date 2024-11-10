@@ -410,6 +410,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "TPI_Viajes_Compartidos.Controllers.PassengerController",
+    "Method": "GetReservedTravels",
+    "RelativePath": "api/Passenger/{passengerId}/reserved-travels",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "passengerId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "TPI_Viajes_Compartidos.Controllers.TravelController",
     "Method": "CreateTravel",
     "RelativePath": "api/Travel",

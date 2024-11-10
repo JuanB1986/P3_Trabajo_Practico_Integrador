@@ -54,6 +54,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region UPDATE
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Update(int id, [FromBody] AdminUpdateDto requestDto)
         {
             var isUpdated = _adminService.Update(id, requestDto);
@@ -69,6 +70,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region DELETE
         [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var isDeleted = _adminService.Delete(id);
@@ -82,12 +84,14 @@ namespace TPI_Viajes_Compartidos.Controllers
         }
         #endregion
 
+        #region ALL USERS
         [HttpGet("all-users")]
+        [Authorize(Roles = "Admin")]
         public async Task<IActionResult> GetAllUsers()
         {
             var users = await _adminService.GetAllUsers();
             return Ok(users);
         }
-
+        #endregion
     }
 }

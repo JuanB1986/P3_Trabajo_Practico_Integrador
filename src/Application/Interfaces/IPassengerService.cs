@@ -1,5 +1,6 @@
 ﻿using Application.Models;
 using Application.Models.Request;
+using Application.Models.Response;
 using Domain.Entities;
 using System;
 using System.Collections.Generic;
@@ -18,5 +19,6 @@ namespace Application.Interfaces
         bool Delete(int id);
         bool AddReservation(int passengerId, int travelId);
         bool CancelReservation(int passengerId, int travelId);
+        IEnumerable<TravelForResponse> GetReservedTravels(int passengerId);
     }
 }

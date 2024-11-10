@@ -1,6 +1,7 @@
 ﻿using Application.Interfaces;
 using Application.Models;
 using Application.Models.Request;
+using Application.Models.Response;
 using Domain.Entities;
 using Domain.Enum;
 using Domain.Interfaces;
@@ -55,6 +56,20 @@ namespace Application.Services
 
             return PassengerDto.CreatePassenger(passenger);
         }
+
+        public IEnumerable<TravelForResponse> GetReservedTravels(int passengerId)
+        {
+            var passenger = _passengerRepository.GetPassengerById(passengerId);
+
+            if (passenger == null || !passenger.Reservations.Any())
+            {
+                return new List<TravelForResponse>();
+            }
+
+            var reservedTravels = TravelForResponse.CreateList(passenger.Reservations);
+            return reservedTravels;
+        }
+
 
         // UPDATE
         public bool Update(int id, PassengerUpdateDto requestDto)

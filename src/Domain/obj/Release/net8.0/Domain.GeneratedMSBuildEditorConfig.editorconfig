@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Domain
-build_property.ProjectDir = C:\Users\JM\Desktop\UTN\3er Cuatrimestre\Programación 3\P3_Trabajo_Practico_Integrador\Domain\
+build_property.ProjectDir = C:\Users\Casa\Documents\TUP\TPI-ViajesCompartidos\P3_Trabajo_Practico_Integrador\src\Domain\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

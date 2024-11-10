@@ -38,6 +38,14 @@ namespace TPI_Viajes_Compartidos.Controllers
             return Ok(passenger);
         }
 
+        [HttpGet("{passengerId}/reserved-travels")]
+        [Authorize(Roles = "Passenger")]
+        public IActionResult GetReservedTravels(int passengerId)
+        {
+            var reservedTravels = _passengerService.GetReservedTravels(passengerId);
+            return Ok(reservedTravels);
+        }
+
         [HttpGet("{id}")]
         public IActionResult GetPassengerById([FromRoute] int id)
         {
@@ -54,7 +62,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region UPDATE
         [HttpPut("{id}")]
-        [Authorize(Roles = "Passenger")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Update(int id, [FromBody] PassengerUpdateDto requestDto)
         {
             var isUpdated = _passengerService.Update(id, requestDto);
@@ -70,7 +78,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region DELETE
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Passenger")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var isDeleted = _passengerService.Delete(id);
@@ -115,5 +123,6 @@ namespace TPI_Viajes_Compartidos.Controllers
             return Ok(new { Message = "Reservation canceled successfully." });
         }
         #endregion
+
     }
 }

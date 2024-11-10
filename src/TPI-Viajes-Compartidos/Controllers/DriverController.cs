@@ -54,7 +54,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region UPDATE
         [HttpPut("{id}")]
-        [Authorize(Roles = "Driver")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Update(int id, [FromBody] DriverUpdateDto requestDto)
         {
             var isUpdated = _driverService.Update(id, requestDto);
@@ -70,7 +70,7 @@ namespace TPI_Viajes_Compartidos.Controllers
 
         #region DELETE
         [HttpDelete("{id}")]
-        [Authorize(Roles = "Driver")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Delete(int id)
         {
             var isDeleted = _driverService.Delete(id);
@@ -84,6 +84,7 @@ namespace TPI_Viajes_Compartidos.Controllers
         }
         #endregion
 
+        #region TRAVELS BY DRIVER
         [HttpGet("{id}/travels")]
         public IActionResult GetTravelsByDriverId(int id)
         {
@@ -91,6 +92,6 @@ namespace TPI_Viajes_Compartidos.Controllers
 
             return Ok(travels);
         }
-
+        #endregion
     }
 }
